@@ -11,6 +11,7 @@
 - 封装 `ajax` (`axios`)
 - 封装 `localStorage`
 - 精装 `html`
+- 全局样式
 
 ---
 
@@ -45,4 +46,4 @@
 
 ## 写作不易, 如果有用, 请我喝杯 kuoluo ^\_^
 
-**WhatsApp / Telegram:** **_87714526555_**
+**Kaspi / WhatsApp / Telegram:** **_87714526555_**
