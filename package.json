@@ -1,0 +1,49 @@
+{
+  "name": "klikmetrics",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^4.11.2",
+    "axios": "^0.21.1",
+    "craco": "^0.0.3",
+    "craco-antd": "^1.19.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-intl": "^5.17.2",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "redux": "3.7.2",
+    "redux-thunk": "^2.3.0",
+    "store": "^2.0.12"
+  },
+  "devDependencies": {
+    "raw-loader": "^4.0.2",
+    "redux-devtools-extension": "^2.13.9"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  },
+  "cracoConfig": "src/config/craco.config.js",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
