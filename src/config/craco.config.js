@@ -3,14 +3,15 @@ const path = require("path");
 
 module.exports = {
   devServer: {
+    port: 3030,
+    disableHostCheck: true,
     proxy: {
-      "/api": {
-        target: "http://google.com",
-        //target: 'http://192.168.9.19:8000',
+      "/data-api": {
+        // target: "https://getman.cn",
+        target: "http://127.0.0.1:8000",
         changeOrigin: true,
-        pathRewrite: {
-          "^/api": "",
-        },
+        secure: false,
+        pathRewrite: { "^/data-api": "" },
       },
     },
   },
