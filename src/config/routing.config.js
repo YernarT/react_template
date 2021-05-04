@@ -4,6 +4,8 @@ import PageNotFoundPage from "@pages/public/PageNotFoundPage";
 // import RegisterPage from "@pages/user/RegisterPage";
 // import UserHomePage from "@pages/user/HomePage";
 
+const DEBUG = true;
+
 const routingConfig = [
   {
     path: "/login",
@@ -32,5 +34,12 @@ const routingConfig = [
     permission: ["guest", "user", "admin"],
   },
 ];
+
+if (DEBUG) {
+  routingConfig.forEach((conf) => {
+    conf.auth.push(false);
+    conf.permission.push("guest");
+  });
+}
 
 export default routingConfig;
