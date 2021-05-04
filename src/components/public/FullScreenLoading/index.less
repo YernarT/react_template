@@ -2,7 +2,57 @@
   width: 100%;
   height: 100vh;
   background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
+
+  @keyframes spinner1 {
+    0% {
+      transform: rotate(0deg);
+      border-width: 1rem;
+    }
+    50% {
+      transform: rotate(180deg);
+      border-width: 1rem;
+    }
+    100% {
+      transform: rotate(360deg);
+      border-width: 1rem;
+    }
+  }
+
+  @keyframes spinner2 {
+    0% {
+      transform: rotate(0deg);
+      border-width: 1rem;
+    }
+    50% {
+      transform: rotate(180deg);
+      border-width: 1rem;
+    }
+    100% {
+      transform: rotate(360deg);
+      border-width: 1rem;
+    }
+  }
+
+  .spinner1,
+  .spinner2 {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    border: 1rem solid transparent;
+    border-top-color: #0b00ff;
+    border-radius: 50%;
+    animation: spinner1 1.2s linear infinite;
+  }
+
+  .spinner2 {
+    border: 1rem solid transparent;
+    border-bottom-color: #0b00ff;
+    animation: spinner2 1.2s linear infinite;
+  }
 }
