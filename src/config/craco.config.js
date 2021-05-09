@@ -41,7 +41,7 @@ module.exports = {
               "@success-color": "#52c41a",
               "@warning-color": "#faad14",
               "@error-color": "#f5222d",
-              "@font-size-base": "14px;",
+              "@font-size-base": "10px;",
               "@text-color": "#000",
               "@text-color-secondary": "#9A9CB7",
               "@disabled-color": "rgba(0, 0, 0, 0.25)",
