@@ -10,10 +10,38 @@ import kk_KZ from "antd/lib/locale/kk_KZ";
 
 import { I18nProvider } from "@i18n";
 import { routingConfig } from "@config";
+import { debounce } from "@utils";
 import RouteWithConfig from "@components/public/RouteWithConfig";
 import FullScreenLoading from "@components/public/FullScreenLoading";
 
 class App extends Component {
+  // constructor(props) {
+  // super(props);
+  // }
+
+  handelResize = debounce(() => {
+    let { clientWidth } = window.document.documentElement;
+    let htmlFontSize = (14 * clientWidth) / 320;
+    if (htmlFontSize > 18) htmlFontSize = 18;
+    if (htmlFontSize < 14) htmlFontSize = 14;
+    window.document.documentElement.style.fontSize =
+      htmlFontSize.toFixed(2) + "px";
+
+    // console.log(
+    //   window.document.documentElement.style.fontSize
+    // );
+  }, 500);
+
+  componentDidMount = () => {
+    window.addEventListener("load", this.handelResize);
+    window.addEventListener("resize", this.handelResize);
+  };
+
+  componentWillUnmount = () => {
+    window.removeEventListener("load", this.handelResize);
+    window.removeEventListener("resize", this.handelResize);
+  };
+
   render() {
     const { jwt, userType } = this.props.user;
     const { locale, isLoading } = this.props.page;
