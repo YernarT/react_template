@@ -12,7 +12,11 @@ import { I18nProvider } from "@i18n";
 import { routingConfig } from "@config";
 import RouteWithConfig from "@components/common/RouteWithConfig";
 
-import { debounce } from "@utils";
+import { debounce, localStorage } from "@utils";
+
+import "@assets/less/normalize.less";
+import "@assets/less/antd.less";
+import "./App.less";
 
 class App extends Component {
   // constructor(props) {
