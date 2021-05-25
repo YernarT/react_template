@@ -1,32 +1,40 @@
+// AUTH
 import LoginPage from "@pages/public/LoginPage";
-import PageNotFoundPage from "@pages/public/PageNotFoundPage";
 
-// import RegisterPage from "@pages/user/RegisterPage";
-// import UserHomePage from "@pages/user/HomePage";
+// USER
+import UserHomePage from "@pages/user/HomePage";
+
+// ADMIN
+import AdminHomePage from "@pages/admin/HomePage";
+
+// 404
+import PageNotFoundPage from "@pages/public/PageNotFoundPage";
 
 const DEBUG = true;
 
 const routingConfig = [
+  /* AUTH */
   {
     path: "/login",
     page: LoginPage,
     auth: [false],
     permission: ["guest"],
   },
-  {
-    path: "/register",
-    // page: RegisterPage,
-    auth: [false],
-    permission: ["guest"],
-  },
-  /* - - - */
+  /* USER */
   {
     path: "/",
-    // page: UserHomePage,
+    page: UserHomePage,
     auth: [true],
     permission: ["user"],
   },
-  /* --- */
+  /* ADMIN */
+  {
+    path: "/admin",
+    page: AdminHomePage,
+    auth: [true],
+    permission: ["admin"],
+  },
+  /* 404 */
   {
     path: "/404",
     page: PageNotFoundPage,
@@ -37,8 +45,13 @@ const routingConfig = [
 
 if (DEBUG) {
   routingConfig.forEach((conf) => {
-    conf.auth.push(false);
-    conf.permission.push("guest");
+    conf.auth = [...conf.auth, true, false];
+    conf.permission = [
+      ...conf.permission,
+      "guest",
+      "user",
+      "admin",
+    ];
   });
 }
 
