@@ -1,19 +1,21 @@
 import { combineReducers } from "redux";
 import { localStorage } from "@utils";
-
 import {
+  // USER
   UPDATE_USER,
-  // CHANGE_SIDE_BAR_COLLAPSED,
-  CHANGE_FULL_SCREEN_LOADING,
+  DELETE_USER_INFO,
+  // PAGE
   CHANGE_LOCALE,
 } from "@redux/action-types";
 
+// USER
 const userInitState = localStorage.get("user", {
   id: null,
   username: "",
   email: "",
   userType: "guest",
   jwt: "",
+  refreshJWT: "",
 });
 
 function user(preState = userInitState, action) {
@@ -22,25 +24,30 @@ function user(preState = userInitState, action) {
   switch (type) {
     case UPDATE_USER:
       return Object.assign({}, preState, data);
+    case DELETE_USER_INFO:
+      return Object.assign({}, userInitState);
     default:
       return preState;
   }
 }
 
-const pageInitState = {
-  collapsed: false,
-  isLoading: false,
-  locale: localStorage.get("locale", "ru-RU"),
-};
+// PAGE
+const pageInitState = localStorage.get("locale", {
+  locale: "ru-RU",
+  viewMode: window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light",
+});
+
 function page(preState = pageInitState, action) {
   const { type, data } = action;
 
   switch (type) {
-    // case CHANGE_SIDE_BAR_COLLAPSED:
-    // return Object.assign({}, preState, { collapsed: data });
-    case CHANGE_FULL_SCREEN_LOADING:
+     case CHANEG_VIEW_MODE:
       return Object.assign({}, preState, {
-        isLoading: data,
+        viewMode: data,
       });
     case CHANGE_LOCALE:
       return Object.assign({}, preState, { locale: data });
