@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { BrowserRouter, Switch } from "react-router-dom";
+import { HashRouter, Switch } from "react-router-dom";
 
 import { ConfigProvider as AntdConfigProvider } from "antd";
 import en_US from "antd/lib/locale/en_US";
 import zh_CN from "antd/lib/locale/zh_CN";
 import ru_RU from "antd/lib/locale/ru_RU";
 import kk_KZ from "antd/lib/locale/kk_KZ";
-
 import { I18nProvider } from "@i18n";
+
 import { routingConfig } from "@config";
+import RouteWithConfig from "@components/common/RouteWithConfig";
+
 import { debounce } from "@utils";
-import RouteWithConfig from "@components/public/RouteWithConfig";
-import FullScreenLoading from "@components/public/FullScreenLoading";
 
 class App extends Component {
   // constructor(props) {
@@ -21,30 +21,39 @@ class App extends Component {
 
   handelResize = debounce(() => {
     let { clientWidth } = window.document.documentElement;
-    let htmlFontSize = (14 * clientWidth) / 320;
-    if (htmlFontSize > 18) htmlFontSize = 18;
-    if (htmlFontSize < 14) htmlFontSize = 14;
+    let htmlFontSize = (14 * clientWidth) / 300;
+    if (htmlFontSize > 16) htmlFontSize = 16;
+    if (htmlFontSize < 12) htmlFontSize = 12;
     window.document.documentElement.style.fontSize =
       htmlFontSize.toFixed(2) + "px";
-
-    // console.log(
-    //   window.document.documentElement.style.fontSize
-    // );
   }, 500);
+
+  handelBeforeunload = () => {
+    localStorage.set("user", this.props.user);
+    localStorage.set("page", this.props.page);
+  };
 
   componentDidMount = () => {
     window.addEventListener("load", this.handelResize);
     window.addEventListener("resize", this.handelResize);
+    window.addEventListener(
+      "beforeunload",
+      this.handelBeforeunload
+    );
   };
 
   componentWillUnmount = () => {
     window.removeEventListener("load", this.handelResize);
     window.removeEventListener("resize", this.handelResize);
+    window.addEventListener(
+      "beforeunload",
+      this.handelBeforeunload
+    );
   };
 
   render() {
     const { jwt, userType } = this.props.user;
-    const { locale, isLoading } = this.props.page;
+    const { locale } = this.props.page;
     let antdLocale;
     switch (locale) {
       case "en-US":
@@ -67,7 +76,7 @@ class App extends Component {
     return (
       <I18nProvider locale={locale}>
         <AntdConfigProvider locale={antdLocale}>
-          <BrowserRouter>
+          <HashRouter>
             <Switch>
               <RouteWithConfig
                 config={routingConfig}
@@ -75,8 +84,7 @@ class App extends Component {
                 jwt={jwt}
               />
             </Switch>
-          </BrowserRouter>
-          <FullScreenLoading isLoading={isLoading} />
+          </HashRouter>
         </AntdConfigProvider>
       </I18nProvider>
     );

@@ -6,6 +6,7 @@ import {
   DELETE_USER_INFO,
   // PAGE
   CHANGE_LOCALE,
+  CHANEG_VIEW_MODE,
 } from "@redux/action-types";
 
 // USER
@@ -34,7 +35,8 @@ function user(preState = userInitState, action) {
 // PAGE
 const pageInitState = localStorage.get("locale", {
   locale: "ru-RU",
-  viewMode: window.matchMedia &&
+  viewMode:
+    window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)")
       .matches
       ? "dark"
@@ -45,7 +47,7 @@ function page(preState = pageInitState, action) {
   const { type, data } = action;
 
   switch (type) {
-     case CHANEG_VIEW_MODE:
+    case CHANEG_VIEW_MODE:
       return Object.assign({}, preState, {
         viewMode: data,
       });

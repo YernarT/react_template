@@ -1,5 +1,5 @@
 // AUTH
-import LoginPage from "@pages/public/LoginPage";
+import LoginPage from "@pages/common/LoginPage";
 
 // USER
 import UserHomePage from "@pages/user/HomePage";
@@ -8,7 +8,7 @@ import UserHomePage from "@pages/user/HomePage";
 import AdminHomePage from "@pages/admin/HomePage";
 
 // 404
-import PageNotFoundPage from "@pages/public/PageNotFoundPage";
+import PageNotFoundPage from "@pages/common/PageNotFoundPage";
 
 const DEBUG = true;
 
