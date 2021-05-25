@@ -1,7 +1,6 @@
+// USER
 export const UPDATE_USER = "updateUser";
+export const DELETE_USER_INFO = "deleteUserInfo";
 
-// export const CHANGE_SIDE_BAR_COLLAPSED = 'changeSideBarCoolapsed'
-
-export const CHANGE_FULL_SCREEN_LOADING = "changeFullScreenLoading";
-
+// PAGE
 export const CHANGE_LOCALE = "changeLocale";
