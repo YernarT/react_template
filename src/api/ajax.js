@@ -1,70 +1,68 @@
 import axios from "axios";
-import { message } from "antd";
 
 import reduxStore from "@redux/store";
-import { changeFullScreenLoadingAction } from "@redux/actions";
 
+import { message } from "antd";
 
-const dataApiInstance = axios.create({
-  baseURL: "/data-api",
+const apiInstance = axios.create({
+  // baseURL: "/api/",
+  baseURL: "https://your-api.com/",
 });
 
-dataApiInstance.interceptors.request.use((config) => {
+apiInstance.interceptors.request.use((config) => {
   const state = reduxStore.getState();
 
-  reduxStore.dispatch(changeFullScreenLoadingAction(true));
-  config.headers["Authorization"] =
-    "Bearer " + state.user.jwt;
+  config.headers["Authorization"] = state.user.jwt
+    ? "Bearer " + state.user.jwt
+    : "";
 
   return config;
 });
 
-dataApiInstance.interceptors.response.use(
+apiInstance.interceptors.response.use(
   (res) => {
-    reduxStore.dispatch(
-      changeFullScreenLoadingAction(false)
-    );
-
-    return res;
+    return res.data;
   },
   (err) => {
-    reduxStore.dispatch(
-      changeFullScreenLoadingAction(false)
-    );
-
     if (axios.isCancel(err)) {
       console.log("请求取消的错误");
       // 中断promise链
       return new Promise(() => {});
     } else {
-      console.log("请求错误");
-      message.error("Error");
+      if (
+        err.response.status >= 504 &&
+        err.response.status < 600
+      ) {
+        message.error(
+          "Сервер не работает, повторите попытку позже"
+        );
+        // 中断promise链
+        return new Promise(() => {});
+      }
 
-      // return Promise.reject(err);
-      // 中断promise链
-      return new Promise(() => {});
+      return Promise.reject(err.response.data);
     }
   }
 );
 
 export function get(url, params) {
-  return dataApiInstance.get(url, {
-    params,
+  return apiInstance.get(url, {
+    ...params,
   });
 }
 
 export function post(url, data) {
-  return dataApiInstance.post(url, {
-    data,
+  return apiInstance.post(url, {
+    ...data,
   });
 }
 
 export function put(url, data) {
-  return dataApiInstance.get(url, {
-    data,
+  return apiInstance.get(url, {
+    ...data,
   });
 }
 
 export function del(url) {
-  return dataApiInstance.delete(url);
+  return apiInstance.delete(url);
 }
