@@ -1,25 +1,30 @@
 import {
-  UPDATE_USER,
-  //   CHANGE_SIDE_BAR_COLLAPSED,
-  CHANGE_FULL_SCREEN_LOADING,
+  // USER
+  UPDATE_USER_INFO,
+  DELETE_USER_INFO,
+  // PAGE
   CHANGE_LOCALE,
 } from "@redux/action-types";
+import { localStorage } from "@utils";
 
+// USER
 export const updateUserAction = (userObj) => ({
   type: UPDATE_USER,
   data: userObj,
 });
 
-// export const changeSideBarCollapsed = (collapsed) => ({
-//   type: CHANGE_SIDE_BAR_COLLAPSED,
-//   data: collapsed,
-// });
+export const deleteUserInfoAction = () => {
+  localStorage.remove("user");
+  localStorage.remove("page");
 
-export const changeFullScreenLoadingAction = (isLoading) => ({
-  type: CHANGE_FULL_SCREEN_LOADING,
-  data: isLoading,
-});
+  return {
+    type: DELETE_USER_INFO,
+    data: undefined,
+  };
+};
 
+
+// PAGE
 export const changeLocaleAction = (local) => ({
   type: CHANGE_LOCALE,
   data: local,
