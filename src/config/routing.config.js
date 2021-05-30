@@ -1,57 +1,26 @@
-// AUTH
-import LoginPage from "@pages/common/LoginPage";
+import authRouting from "@config/routings/auth-routing";
+import userRouting from "@config/routings/user-routing";
+import adminRouting from "@config/routings/admin-routing";
+import commonRouting from "@config/routings/common-routing";
 
-// USER
-import UserHomePage from "@pages/user/HomePage";
+const DEBUG = false;
 
-// ADMIN
-import AdminHomePage from "@pages/admin/HomePage";
-
-// 404
-import PageNotFoundPage from "@pages/common/PageNotFoundPage";
-
-const DEBUG = true;
+const ALL_AUTH = [true, false];
+const ALL_PERMISSION = ["guest", "user", "admin"];
 
 const routingConfig = [
-  /* AUTH */
-  {
-    path: "/login",
-    page: LoginPage,
-    auth: [false],
-    permission: ["guest"],
-  },
-  /* USER */
-  {
-    path: "/",
-    page: UserHomePage,
-    auth: [true],
-    permission: ["user"],
-  },
-  /* ADMIN */
-  {
-    path: "/admin",
-    page: AdminHomePage,
-    auth: [true],
-    permission: ["admin"],
-  },
-  /* 404 */
-  {
-    path: "/404",
-    page: PageNotFoundPage,
-    auth: [false, true],
-    permission: ["guest", "user", "admin"],
-  },
+  ...authRouting,
+  ...userRouting,
+  ...adminRouting,
+  ...commonRouting,
 ];
 
 if (DEBUG) {
+  console.warn("Routing DEBUG");
+
   routingConfig.forEach((conf) => {
-    conf.auth = [...conf.auth, true, false];
-    conf.permission = [
-      ...conf.permission,
-      "guest",
-      "user",
-      "admin",
-    ];
+    conf.auth = [...ALL_AUTH];
+    conf.permission = [...ALL_PERMISSION];
   });
 }
 

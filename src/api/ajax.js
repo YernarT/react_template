@@ -4,12 +4,12 @@ import reduxStore from "@redux/store";
 
 import { message } from "antd";
 
-const apiInstance = axios.create({
-  // baseURL: "/api/",
-  baseURL: "https://your-api.com/",
+export const myPythonApiInstance = axios.create({
+  baseURL: "my-python-api",
 });
 
-apiInstance.interceptors.request.use((config) => {
+// 请求拦截器
+myPythonApiInstance.interceptors.request.use((config) => {
   const state = reduxStore.getState();
 
   config.headers["Authorization"] = state.user.jwt
@@ -19,14 +19,14 @@ apiInstance.interceptors.request.use((config) => {
   return config;
 });
 
-apiInstance.interceptors.response.use(
+// 响应拦截器
+myPythonApiInstance.interceptors.response.use(
   (res) => {
     return res.data;
   },
   (err) => {
     if (axios.isCancel(err)) {
-      console.log("请求取消的错误");
-      // 中断promise链
+      // 中断Promise链
       return new Promise(() => {});
     } else {
       if (
@@ -34,9 +34,9 @@ apiInstance.interceptors.response.use(
         err.response.status < 600
       ) {
         message.error(
-          "Сервер не работает, повторите попытку позже"
+          "server is down, please try again later"
         );
-        // 中断promise链
+        // 中断Promise链
         return new Promise(() => {});
       }
 
@@ -44,25 +44,3 @@ apiInstance.interceptors.response.use(
     }
   }
 );
-
-export function get(url, params) {
-  return apiInstance.get(url, {
-    ...params,
-  });
-}
-
-export function post(url, data) {
-  return apiInstance.post(url, {
-    ...data,
-  });
-}
-
-export function put(url, data) {
-  return apiInstance.get(url, {
-    ...data,
-  });
-}
-
-export function del(url) {
-  return apiInstance.delete(url);
-}

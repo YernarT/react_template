@@ -6,12 +6,11 @@ module.exports = {
     port: 4000,
     disableHostCheck: true,
     proxy: {
-      "/api": {
-        // target: "https://getman.cn",
+      "my-python-api": {
         target: "http://127.0.0.1:8000",
         changeOrigin: true,
         secure: false,
-        pathRewrite: { "^/api": "" },
+        pathRewrite: { "^my-python-api": "" },
       },
     },
   },
@@ -21,6 +20,7 @@ module.exports = {
       "@api": path.resolve("src/api"),
       "@assets": path.resolve("src/assets"),
       "@config": path.resolve("src/config"),
+      "@hooks": path.resolve("src/hooks"),
       "@components": path.resolve("src/components"),
       "@pages": path.resolve("src/pages"),
       "@redux": path.resolve("src/redux"),
