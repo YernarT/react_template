@@ -37,6 +37,38 @@
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+
+  @media screen and (max-width: 576px) {
+    & {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 768px) and (min-width: 576px) {
+    & {
+      font-size: 17px;
+    }
+  }
+  @media screen and (max-width: 992px) and (min-width: 768px) {
+    & {
+      font-size: 18px;
+    }
+  }
+  @media screen and (max-width: 1200px) and (min-width: 992px) {
+    & {
+      font-size: 19px;
+    }
+  }
+  @media screen and (max-width: 1400px) and(min-width: 1200px) {
+    & {
+      font-size: 20px;
+    }
+  }
+  @media screen and (min-width: 1400px) {
+    & {
+      font-size: 22px;
+    }
+  }
 }
 
 html,
