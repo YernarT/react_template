@@ -55,7 +55,7 @@ module.exports = {
               "@border-radius-base": "6px", // major border radius
               "@border-color-base": "#d9d9d9", // major border color
               "@box-shadow-base":
-                "0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)", // major shadow for layers
+                "0 2px 10px 0px rgb(0 0 0 / 45%), 0 2px 2px 0 rgb(0 0 0 / 45%)", // major shadow for layers
             },
             javascriptEnabled: true,
           },
