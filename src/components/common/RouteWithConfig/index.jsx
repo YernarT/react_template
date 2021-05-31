@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
 
 export default function RouteWithConfig({
@@ -10,6 +10,11 @@ export default function RouteWithConfig({
   const targetConfig = config.find(
     (conf) => conf.path === pathname
   );
+
+  // 解决React app切换路径时, 滚动条不被维护的bug
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // valid route
   if (targetConfig) {
