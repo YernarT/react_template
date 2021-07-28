@@ -4,8 +4,8 @@ import { localStorage } from "@utils";
 export default function useBeforeunload(data) {
   useEffect(() => {
     const handleBeforeunload = () => {
-      Object.keys(data).forEach((el) => {
-        localStorage.set(el, data[el]);
+      Object.entries(data).forEach((el) => {
+        localStorage.set(el[0], el[1]);
       });
     };
 

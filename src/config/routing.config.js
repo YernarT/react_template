@@ -1,7 +1,7 @@
+import commonRouting from "@config/routings/common-routing";
 import authRouting from "@config/routings/auth-routing";
 import userRouting from "@config/routings/user-routing";
 import adminRouting from "@config/routings/admin-routing";
-import commonRouting from "@config/routings/common-routing";
 
 const DEBUG = false;
 
@@ -16,7 +16,7 @@ const routingConfig = [
 ];
 
 if (DEBUG) {
-  console.warn("Routing DEBUG");
+  console.warn("Routing DEBUG!");
 
   routingConfig.forEach((conf) => {
     conf.auth = [...ALL_AUTH];

@@ -1,11 +1,11 @@
-import HomePage from "@pages/user/HomePage";
+import { UserHomePage } from "@pages";
 
 const userRouting = [
   {
     path: "/",
-    page: HomePage,
-    auth: [false],
-    permission: ["guest"],
+    page: UserHomePage,
+    auth: [true],
+    permission: ["user"],
   },
 ];
 

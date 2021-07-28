@@ -3,9 +3,9 @@ import {
   CHANEG_VIEW_MODE,
 } from "@redux/action-types/page-action-types";
 
-export const changeLocaleAction = (local) => ({
+export const changeLocaleAction = (locale) => ({
   type: CHANGE_LOCALE,
-  data: local,
+  data: locale,
 });
 
 export const changeViewModeAction = (mode) => ({

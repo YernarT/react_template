@@ -1,12 +1,17 @@
 import React, { useEffect } from "react";
-import { Route, Redirect } from "react-router-dom";
+import {
+  Route,
+  Redirect,
+  useLocation,
+} from "react-router-dom";
 
 export default function RouteWithConfig({
   config,
-  location: { pathname },
   jwt,
   userType,
 }) {
+  const { pathname } = useLocation();
+
   const targetConfig = config.find(
     (conf) => conf.path === pathname
   );

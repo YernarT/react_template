@@ -1,17 +1,40 @@
 import React from "react";
 import { connect } from "react-redux";
-import { BrowserRouter, Switch } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
-import { ConfigProvider as AntdConfigProvider } from "antd";
-import { I18nProvider } from "@i18n";
+import {
+  ConfigProvider as AntdConfigProvider,
+  message,
+  notification,
+} from "antd";
 
 import { routingConfig } from "@config";
 import { useAntdLocale, useBeforeunload } from "@hooks";
-import RouteWithConfig from "@components/common/RouteWithConfig";
+import { RouteWithConfig } from "@components";
 
-import "@assets/less/normalize.less";
-import "@assets/less/antd.less";
-import "./App.less";
+import "@assets/style/normalize.less";
+import "@assets/style/antd.less";
+
+// Antd message component global config
+message.config({
+  top: 8,
+  duration: 3,
+  maxCount: 4,
+  rtl: false,
+  prefixCls: "react-app-template-message",
+  getContainer: () => document.body,
+});
+
+// Antd notification component global config
+notification.config({
+  placement: "bottomRight",
+  top: 24,
+  bottom: 24,
+  duration: 4.5,
+  rtl: false,
+  prefixCls: "react-app-template-notification",
+  getContainer: () => document.body,
+});
 
 const App = ({
   user,
@@ -23,19 +46,18 @@ const App = ({
   useBeforeunload({ user, page });
 
   return (
-    <I18nProvider locale={locale}>
-      <AntdConfigProvider locale={useAntdLocale(locale)}>
-        <BrowserRouter>
-          <Switch>
-            <RouteWithConfig
-              config={routingConfig}
-              userType={userType}
-              jwt={jwt}
-            />
-          </Switch>
-        </BrowserRouter>
-      </AntdConfigProvider>
-    </I18nProvider>
+    <AntdConfigProvider
+      locale={useAntdLocale(locale)}
+      prefixCls="react-app-template"
+    >
+      <BrowserRouter>
+        <RouteWithConfig
+          config={routingConfig}
+          userType={userType}
+          jwt={jwt}
+        />
+      </BrowserRouter>
+    </AntdConfigProvider>
   );
 };
 

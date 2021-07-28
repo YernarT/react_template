@@ -25,6 +25,7 @@ module.exports = {
       "@pages": path.resolve("src/pages"),
       "@redux": path.resolve("src/redux"),
       "@utils": path.resolve("src/utils"),
+      "@data": path.resolve("src/data"),
       "@i18n": path.resolve("src/i18n"),
     },
   },
@@ -41,6 +42,8 @@ module.exports = {
                * all less variables could be found in
                * https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
                */
+
+              "@ant-prefix": "react-app-template",
               "@primary-color": "rgb(17, 236, 229)", // primary color for all components
               "@text-color": "rgba(0, 0, 0, 0.85)", // major text color
               "@text-color-secondary":
@@ -50,12 +53,12 @@ module.exports = {
               "@warning-color": "#faad14", // warning state color
               "@error-color": " #f5222d", // error state color
               "@font-size-base": "1rem", // major text font size
-              "@heading-color": "rgba(0, 0, 0, 0.85)", // heading text color
+              "@heading-color": "rgba(0, 0, 0, 1)", // heading text color
               "@disabled-color": "rgba(0, 0, 0, 0.25)", // disable state color
-              "@border-radius-base": "6px", // major border radius
-              "@border-color-base": "#d9d9d9", // major border color
+              "@border-radius-base": "0px", // major border radius
+              "@border-color-base": "rgb(17, 236, 229)", // major border color
               "@box-shadow-base":
-                "0 2px 10px 0px rgb(0 0 0 / 45%), 0 2px 2px 0 rgb(0 0 0 / 45%)", // major shadow for layers
+                "2px 2px 5px rgb(17, 236, 229)", // major shadow for layers
             },
             javascriptEnabled: true,
           },

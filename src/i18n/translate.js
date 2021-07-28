@@ -1,8 +1,14 @@
-import React from "react";
-import { FormattedMessage } from "react-intl";
+import i18nLanguages from "@i18n/messages";
 
-const translate = (id, values) => (
-  <FormattedMessage id={id} values={{ ...values }} />
-);
+import reduxStore from "@redux/store";
+
+// 懒加载语言包
+// 之后做正则替换 values 替换 {variable}
+const translate = (id, values = {}) => {
+  const state = reduxStore.getState();
+  const { locale } = state.page;
+
+  return i18nLanguages[locale][id];
+};
 
 export default translate;

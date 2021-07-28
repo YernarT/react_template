@@ -5,7 +5,7 @@ import {
 import { localStorage } from "@utils";
 
 const initState = localStorage.get("page", {
-  locale: "kk-KZ",
+  locale: "en-US",
   viewMode:
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)")

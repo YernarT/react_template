@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
-export const HomePage = () => {
-  return <div>Admin Home Page</div>;
+export const LoginPage = () => {
+  return <div>Login Page</div>;
 };
 
 const mapStateToProps = (state) => state;
@@ -12,4 +12,4 @@ const mapDispatchToProps = {};
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomePage);
+)(LoginPage);

@@ -1,4 +1,4 @@
-import AdminHomePage from "@pages/admin/HomePage";
+import { AdminHomePage } from "@pages";
 
 const adminRouting = [
   {

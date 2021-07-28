@@ -20,7 +20,7 @@ export default function useAntdLocale(locale) {
       antdLocale = kk_KZ;
       break;
     default:
-      antdLocale = kk_KZ;
+      antdLocale = en_US;
       break;
   }
 

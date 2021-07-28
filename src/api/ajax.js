@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import reduxStore from "@redux/store";
+import { useSelector } from "react-redux";
 
 import { message } from "antd";
 
@@ -10,10 +10,12 @@ export const myPythonApiInstance = axios.create({
 
 // 请求拦截器
 myPythonApiInstance.interceptors.request.use((config) => {
-  const state = reduxStore.getState();
+  const {
+    user: { jwt },
+  } = useSelector((state) => state);
 
-  config.headers["Authorization"] = state.user.jwt
-    ? "Bearer " + state.user.jwt
+  config.headers["Authorization"] = jwt
+    ? "Bearer " + jwt
     : "";
 
   return config;

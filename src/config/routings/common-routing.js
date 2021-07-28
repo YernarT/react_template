@@ -1,4 +1,4 @@
-import PageNotFoundPage from "@pages/common/PageNotFoundPage";
+import { PageNotFoundPage } from "@pages";
 
 const commonRouting = [
   {
