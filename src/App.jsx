@@ -9,7 +9,11 @@ import {
 } from "antd";
 
 import { routingConfig } from "@config";
-import { useAntdLocale, useBeforeunload } from "@hooks";
+import {
+  useAntdLocale,
+  useBeforeunload,
+  useConsole,
+} from "@hooks";
 import { RouteWithConfig } from "@components";
 
 import "@assets/style/normalize.less";
@@ -44,6 +48,9 @@ const App = ({
 }) => {
   // 刷新页面保存Redux内数据到LocalStorage
   useBeforeunload({ user, page });
+
+  // 打印广告信息到Console面板
+  useConsole();
 
   return (
     <AntdConfigProvider
