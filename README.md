@@ -1,5 +1,7 @@
 # React-App-Template
 
+# Navigi
+
 ## Project structure
 
 |                 Folder                  |                                      Desc                                       |
