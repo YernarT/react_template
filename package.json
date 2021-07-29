@@ -1,6 +1,6 @@
 {
   "name": "react-app-template",
-  "version": "0.3.0",
+  "version": "0.0.0",
   "private": true,
   "dependencies": {
     "antd": "^4.16.9",
