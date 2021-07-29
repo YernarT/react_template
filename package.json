@@ -13,7 +13,6 @@
     "email": "toktaryernar@gmail.com",
     "url": "https://github.com/YernarT"
   },
-  "homepage": "http://it-is-it.web.app/docs/react-app-template",
   "bugs": {
     "url": "https://github.com/YernarT/react-app-template/issues"
   },
@@ -38,8 +37,20 @@
     "store": "^2.0.12"
   },
   "devDependencies": {
+    "eslint-config-prettier": "^8.3.0",
+    "husky": ">=4",
+    "lint-staged": ">=10",
+    "prettier": "2.1.2",
     "raw-loader": "^4.0.2",
     "redux-devtools-extension": "^2.13.9"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css,less,md}": "prettier --write"
   },
   "scripts": {
     "start": "craco start",
@@ -51,7 +62,8 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "prettier"
     ]
   },
   "browserslist": {

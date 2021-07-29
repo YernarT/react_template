@@ -10,18 +10,16 @@ import {
   message,
 } from "antd";
 
-import { i18nTranslate, i18nLocales } from "@i18n";
+import { i18nTranslate,      i18nLocales } from "@i18n";
 
 export default function PageNotFoundPage() {
   const dispath = useDispatch();
 
   return (
     <>
-      <Result
-        status="404"
-        title="404"
-        subTitle={i18nTranslate("404")}
-        extra={<Link to="/">Back Home</Link>}
+      <Result status="404" title="404"
+subTitle={i18nTranslate("404")}
+                  extra={<Link to="/">Back Home</Link>}
       />
       <hr />
       <p>
