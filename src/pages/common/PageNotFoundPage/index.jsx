@@ -19,6 +19,7 @@ export default function PageNotFoundPage() {
     <>
       <Result status="404" title="404"
 subTitle={i18nTranslate("404")}
+
                   extra={<Link to="/">Back Home</Link>}
       />
       <hr />
