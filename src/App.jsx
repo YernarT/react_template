@@ -46,10 +46,10 @@ const App = ({
   user: { jwt, userType },
   page: { locale },
 }) => {
-  // 刷新页面保存Redux内数据到LocalStorage
+  // Refresh the page to save the data in Redux to LocalStorage
   useBeforeunload({ user, page });
 
-  // 打印广告信息到Console面板
+  // Print ads infor to the console panel
   useConsole();
 
   return (

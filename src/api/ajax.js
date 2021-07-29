@@ -8,7 +8,7 @@ export const myPythonApiInstance = axios.create({
   baseURL: "my-python-api",
 });
 
-// 请求拦截器
+// Request interceptor
 myPythonApiInstance.interceptors.request.use((config) => {
   const {
     user: { jwt },
@@ -21,14 +21,14 @@ myPythonApiInstance.interceptors.request.use((config) => {
   return config;
 });
 
-// 响应拦截器
+// Response interceptor
 myPythonApiInstance.interceptors.response.use(
   (res) => {
     return res.data;
   },
   (err) => {
     if (axios.isCancel(err)) {
-      // 中断Promise链
+      // Interrupt the Promise chain
       return new Promise(() => {});
     } else {
       if (
@@ -38,7 +38,7 @@ myPythonApiInstance.interceptors.response.use(
         message.error(
           "server is down, please try again later"
         );
-        // 中断Promise链
+        // Interrupt the Promise chain
         return new Promise(() => {});
       }
 

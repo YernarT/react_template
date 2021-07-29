@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 export default function useConsole() {
   useEffect(() => {
-    // 样式
+    // text style
     let styleTitle1 = `
     font-size: 30px;
     font-weight: 900;
@@ -18,7 +18,7 @@ export default function useConsole() {
     color: rgb(30,150,255);
     `;
 
-    // 内容
+    // text content
     let title1 = "🐱‍💻 IT IS IT";
     let title2 = "《 IT IS IT 工作室 》";
 
@@ -36,7 +36,7 @@ export default function useConsole() {
     WhatsApp / Telegram:  ${phoneNumber}
     `;
 
-    // 输出
+    // output
     console.log(
       `%c${title1} %c${title2} 
           %c${content}`,
