@@ -2,6 +2,26 @@
   "name": "react-app-template",
   "version": "0.0.0",
   "private": true,
+  "description": "React App Template is a standard for building react project.",
+  "keywords": [
+    "react",
+    "template",
+    "frontend"
+  ],
+  "author": {
+    "name": "Yernar.T",
+    "email": "toktaryernar@gmail.com",
+    "url": "https://github.com/YernarT"
+  },
+  "homepage": "http://it-is-it.web.app/docs/react-app-template",
+  "bugs": {
+    "url": "https://github.com/YernarT/react-app-template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YernarT/react-app-template"
+  },
+  "license": "MIT",
   "dependencies": {
     "antd": "^4.16.9",
     "axios": "^0.21.1",
