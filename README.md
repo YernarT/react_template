@@ -1,5 +1,7 @@
 # [React App Template](https://it-is-it.web.app/) &middot; v0.0.0
 
+配置 eslint、 prettier 和 commitlint 规范工程
+
 React App Template is a standard for building react project.
 
 **Comprehensive:** React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable, simpler to understand, and easier to debug.
