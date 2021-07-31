@@ -1,37 +1,105 @@
-## Welcome to GitHub Pages
+# [React App Template](https://it-is-it.web.app/docs/react-app-template) &middot; v0.0.0
 
-You can use the [editor on GitHub](https://github.com/YernarT/react-app-template/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+React App Template is a standard for building react project.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+**Comprehensive:** Created more structures used in actual projects, like: _components_, _pages_, _hooks_, _redux_, _i18n_, etc, reduce repetitive work and start projects quickly.
 
-### Markdown
+**Scalable:** It is not a fixed structure, it can be reduced or added according to the actual needs of the project.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+**Maintained:** The architecture is used by many of our real projects, and the architecture will be updated every once in a while, and the issues raised by the community will also be noted and resolved.
 
-```markdown
-Syntax highlighted code block
+[Learn how to use React App Template in your own project](https://it-is-it.web.app/docs/react-app-template/getting-started).
 
-# Header 1
-## Header 2
-### Header 3
+## Installation
 
-- Bulleted
-- List
+- From [github repository](https://github.com/YernarT/react-app-template).
 
-1. Numbered
-2. List
+## Documentation
 
-**Bold** and _Italic_ and `Code` text
+React App Template has been designed from the very beginning as a situation where multiple projects are developed at the same time.
 
-[Link](url) and ![Image](src)
+You can find the React App Template documentation [on the website](https://it-is-it.web.app/docs).
+
+Check out the [Getting Started](https://it-is-it.web.app/docs/react-app-template/getting-started) page for a quick overview.
+
+You can improve it by sending pull requests to [this repository](https://github.com/YernarT/react-app-template).
+
+## Examples
+
+```jsx
+import React from "react"; // react 17
+import ReactDOM from "react-dom";
+
+import { Provider as ReduxProvider } from "react-redux";
+import reduxStore from "@redux/store"; // alias
+
+import App from "./App";
+
+ReactDOM.render(
+  <ReduxProvider store={reduxStore}>
+    <App />
+  </ReduxProvider>,
+  document.getElementById("root")
+);
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Almost every project will use redux, this code will put redux on your react app.
 
-### Jekyll Themes
+## Features
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/YernarT/react-app-template/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+**Recent**
 
-### Support or Contact
+- Add _eslint_
+- Add _prettier_
+- Add _commitlint_
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+**Long-term**
+
+- rewrite by _TypeScript_
+
+## Project structure
+
+Folders and files other than those created by [CRA](https://reactjs.org/docs/create-a-new-react-app.html).
+
+|        Folder         |                                Desc                                 |
+| :-------------------: | :-----------------------------------------------------------------: |
+|   **src/index.js**    |                          App start in here                          |
+|    **src/App.jsx**    |                              Init app                               |
+|   **src/App.less**    |                     App style written with less                     |
+|        **---**        |                                 ---                                 |
+|      **src/api**      |                         Project api folder                          |
+|  **src/api/ajax.js**  |                    Encapsulate the axios library                    |
+| **src/api/\*-api.js** |                     APIs of various components                      |
+|        **---**        |                                 ---                                 |
+|    **src/assets**     |                       Style, media files, etc                       |
+|        **---**        |                                 ---                                 |
+|  **src/components**   |           Various components, export in the index.js file           |
+|        **---**        |                                 ---                                 |
+|     **src/pages**     |             Various pages, export in the index.js file              |
+|        **---**        |                                 ---                                 |
+|     **src/hooks**     |             Various hooks, export in the index.js file              |
+|        **---**        |                                 ---                                 |
+|     **src/redux**     |                 Create redux store, action, reducer                 |
+|        **---**        |                                 ---                                 |
+|    **src/config**     |                    Craco config and route config                    |
+|        **---**        |                                 ---                                 |
+|     **src/data**      |              Various data, export in the index.js file              |
+|        **---**        |                                 ---                                 |
+|     **src/util**      |              Various util, export in the index.js file              |
+|        **---**        |                                 ---                                 |
+|     **src/i18n**      | Internationalized folder, save translation files in messages folder |
+|        **---**        |                                 ---                                 |
+|       **.env**        |                          Environment file                           |
+|   **jsconfig.json**   |                     VSCode config file (Alias)                      |
+
+## Project basic pages
+
+|   URL    |      Page      |         Desc          |
+| :------: | :------------: | :-------------------: |
+|   `/`    |   User Home    |    User home page     |
+| `/login` |     Login      |      Login page       |
+|  `/404`  | Page not found | "Page not found" page |
+
+### License
+
+React App Template is [MIT licensed](./LICENSE).
