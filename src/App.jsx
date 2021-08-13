@@ -1,6 +1,6 @@
 import React from "react";
-import { connect } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import {
   ConfigProvider as AntdConfigProvider,
@@ -40,12 +40,14 @@ notification.config({
   getContainer: () => document.body,
 });
 
-const App = ({
-  user,
-  page,
-  user: { jwt, userType },
-  page: { locale },
-}) => {
+export default function App() {
+  const {
+    user,
+    page,
+    user: { jwt, userType },
+    page: { locale },
+  } = useSelector((state) => state);
+
   // Refresh the page to save the data in Redux to LocalStorage
   useBeforeunload({ user, page });
 
@@ -66,13 +68,4 @@ const App = ({
       </BrowserRouter>
     </AntdConfigProvider>
   );
-};
-
-const mapStateToProps = (state) => state;
-
-const mapDispatchToProps = {};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+}
