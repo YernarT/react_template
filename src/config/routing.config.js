@@ -3,10 +3,10 @@ import authRouting from "@config/routings/auth-routing";
 import userRouting from "@config/routings/user-routing";
 import adminRouting from "@config/routings/admin-routing";
 
-const DEBUG = false;
+export const DEBUG = false;
 
-const ALL_AUTH = [true, false];
-const ALL_PERMISSION = ["guest", "user", "admin"];
+export const ALL_AUTH = [true, false];
+export const ALL_PERMISSION = ["guest", "user", "admin"];
 
 const routingConfig = [
 	...authRouting,
