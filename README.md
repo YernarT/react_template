@@ -1,4 +1,4 @@
-# [React App Template](https://it-is-it.web.app/docs/react-app-template) &middot; v0.0.0
+# [React App Template](https://it-is-it.web.app/docs/react-app-template) &middot; v0.1.1
 
 React App Template is a standard for building react project.
 
@@ -27,11 +27,11 @@ You can improve it by sending pull requests to [this repository](https://github.
 ## Examples
 
 ```jsx
-import React from "react"; // react 17
+import React from "react";
 import ReactDOM from "react-dom";
 
 import { Provider as ReduxProvider } from "react-redux";
-import reduxStore from "@redux/store"; // alias
+import reduxStore from "@redux/store";
 
 import App from "./App";
 
