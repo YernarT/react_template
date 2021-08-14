@@ -1,18 +1,18 @@
 {
-  "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "@api/*": ["src/api/*"],
-      "@assets/*": ["src/assets/*"],
-      "@config/*": ["src/config/*"],
-      "@components/*": ["src/components/*"],
-      "@pages/*": ["src/pages/*"],
-      "@redux/*": ["src/redux/*"],
-      "@utils/*": ["src/utils/*"],
-      "@data/*": ["src/data/*"],
-      "@i18n/*": ["src/i18n/*"]
-    },
-    "experimentalDecorators": true
-  },
-  "exclude": ["node_modules", "build"]
+	"compilerOptions": {
+		"baseUrl": "./",
+		"paths": {
+			"@api/*": ["src/api/*"],
+			"@assets/*": ["src/assets/*"],
+			"@config/*": ["src/config/*"],
+			"@components/*": ["src/components/*"],
+			"@pages/*": ["src/pages/*"],
+			"@redux/*": ["src/redux/*"],
+			"@utils/*": ["src/utils/*"],
+			"@data/*": ["src/data/*"],
+			"@i18n/*": ["src/i18n/*"]
+		},
+		"experimentalDecorators": true
+	},
+	"exclude": ["node_modules", "build"]
 }

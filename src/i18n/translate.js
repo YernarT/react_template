@@ -9,10 +9,10 @@ import reduxStore from "@redux/store";
  */
 
 const translate = (id, values = {}) => {
-  const state = reduxStore.getState();
-  const { locale } = state.page;
+	const state = reduxStore.getState();
+	const { locale } = state.page;
 
-  return i18nLanguages[locale][id];
+	return i18nLanguages[locale][id];
 };
 
 export default translate;

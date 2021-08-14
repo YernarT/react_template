@@ -9,19 +9,19 @@ const ALL_AUTH = [true, false];
 const ALL_PERMISSION = ["guest", "user", "admin"];
 
 const routingConfig = [
-  ...authRouting,
-  ...userRouting,
-  ...adminRouting,
-  ...commonRouting,
+	...authRouting,
+	...userRouting,
+	...adminRouting,
+	...commonRouting,
 ];
 
 if (DEBUG) {
-  console.warn("Routing DEBUG!");
+	console.warn("Routing DEBUG!");
 
-  routingConfig.forEach((conf) => {
-    conf.auth = [...ALL_AUTH];
-    conf.permission = [...ALL_PERMISSION];
-  });
+	routingConfig.forEach(conf => {
+		conf.auth = [...ALL_AUTH];
+		conf.permission = [...ALL_PERMISSION];
+	});
 }
 
 export default routingConfig;

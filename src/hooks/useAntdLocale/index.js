@@ -4,25 +4,25 @@ import ru_RU from "antd/lib/locale/ru_RU";
 import kk_KZ from "antd/lib/locale/kk_KZ";
 
 export default function useAntdLocale(locale) {
-  let antdLocale;
+	let antdLocale;
 
-  switch (locale) {
-    case "en-US":
-      antdLocale = en_US;
-      break;
-    case "zh-CN":
-      antdLocale = zh_CN;
-      break;
-    case "ru-RU":
-      antdLocale = ru_RU;
-      break;
-    case "kk-KZ":
-      antdLocale = kk_KZ;
-      break;
-    default:
-      antdLocale = en_US;
-      break;
-  }
+	switch (locale) {
+		case "en-US":
+			antdLocale = en_US;
+			break;
+		case "zh-CN":
+			antdLocale = zh_CN;
+			break;
+		case "ru-RU":
+			antdLocale = ru_RU;
+			break;
+		case "kk-KZ":
+			antdLocale = kk_KZ;
+			break;
+		default:
+			antdLocale = en_US;
+			break;
+	}
 
-  return antdLocale;
+	return antdLocale;
 }

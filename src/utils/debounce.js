@@ -1,11 +1,11 @@
 export default function debounce(fn, delay) {
-  let timer = null;
+	let timer = null;
 
-  return function () {
-    clearTimeout(timer);
+	return function () {
+		clearTimeout(timer);
 
-    timer = setTimeout(() => {
-      fn.apply(this, arguments);
-    }, delay);
-  };
+		timer = setTimeout(() => {
+			fn.apply(this, arguments);
+		}, delay);
+	};
 }

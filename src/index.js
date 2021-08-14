@@ -7,8 +7,8 @@ import reduxStore from "@redux/store";
 import App from "./App";
 
 ReactDOM.render(
-  <ReduxProvider store={reduxStore}>
-    <App />
-  </ReduxProvider>,
-  document.getElementById("root")
+	<ReduxProvider store={reduxStore}>
+		<App />
+	</ReduxProvider>,
+	document.getElementById("root"),
 );

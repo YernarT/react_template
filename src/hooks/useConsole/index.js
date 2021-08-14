@@ -1,30 +1,30 @@
 import { useEffect } from "react";
 
 export default function useConsole() {
-  useEffect(() => {
-    // text style
-    let styleTitle1 = `
+	useEffect(() => {
+		// text style
+		let styleTitle1 = `
     font-size: 30px;
     font-weight: 900;
     color: rgb(1,255,255);
     `;
-    let styleTitle2 = `
+		let styleTitle2 = `
     font-style: oblique;
     font-size:16px;
     color: rgb(1,255,255);
     font-weight: 900;
     `;
-    let styleContent = `
+		let styleContent = `
     color: rgb(30,150,255);
     `;
 
-    // text content
-    let title1 = "🐱‍💻 IT IS IT";
-    let title2 = "《 IT IS IT 工作室 》";
+		// text content
+		let title1 = "🐱‍💻 IT IS IT";
+		let title2 = "《 IT IS IT 工作室 》";
 
-    let url = "https://it-is-it.web.com";
-    let phoneNumber = "87714526555";
-    let content = `
+		let url = "https://it-is-it.web.com";
+		let phoneNumber = "87714526555";
+		let content = `
     #招募
     
     要求: 
@@ -36,13 +36,13 @@ export default function useConsole() {
     WhatsApp / Telegram:  ${phoneNumber}
     `;
 
-    // output
-    console.log(
-      `%c${title1} %c${title2} 
+		// output
+		console.log(
+			`%c${title1} %c${title2} 
           %c${content}`,
-      styleTitle1,
-      styleTitle2,
-      styleContent
-    );
-  }, []);
+			styleTitle1,
+			styleTitle2,
+			styleContent,
+		);
+	}, []);
 }

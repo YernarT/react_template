@@ -5,6 +5,6 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import reducers from "@redux/reducers";
 
 export default createStore(
-  reducers,
-  composeWithDevTools(applyMiddleware(thunk))
+	reducers,
+	composeWithDevTools(applyMiddleware(thunk)),
 );
