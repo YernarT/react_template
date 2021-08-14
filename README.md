@@ -49,48 +49,53 @@ Almost every project will use redux, this code will put redux on your react app.
 
 **Recent**
 
-- Add _eslint_
-- Add _prettier_
 - Add _commitlint_
 
 **Long-term**
 
-- rewrite by _TypeScript_
+- refactor by _TypeScript_
 
 ## Project structure
 
 Folders and files other than those created by [CRA](https://reactjs.org/docs/create-a-new-react-app.html).
 
-|        Folder         |                                Desc                                 |
-| :-------------------: | :-----------------------------------------------------------------: |
-|   **src/index.js**    |                          App start in here                          |
-|    **src/App.jsx**    |                              Init app                               |
-|   **src/App.less**    |                     App style written with less                     |
-|        **---**        |                                 ---                                 |
-|      **src/api**      |                         Project api folder                          |
-|  **src/api/ajax.js**  |                    Encapsulate the axios library                    |
-| **src/api/\*-api.js** |                     APIs of various components                      |
-|        **---**        |                                 ---                                 |
-|    **src/assets**     |                       Style, media files, etc                       |
-|        **---**        |                                 ---                                 |
-|  **src/components**   |           Various components, export in the index.js file           |
-|        **---**        |                                 ---                                 |
-|     **src/pages**     |             Various pages, export in the index.js file              |
-|        **---**        |                                 ---                                 |
-|     **src/hooks**     |             Various hooks, export in the index.js file              |
-|        **---**        |                                 ---                                 |
-|     **src/redux**     |                 Create redux store, action, reducer                 |
-|        **---**        |                                 ---                                 |
-|    **src/config**     |                    Craco config and route config                    |
-|        **---**        |                                 ---                                 |
-|     **src/data**      |              Various data, export in the index.js file              |
-|        **---**        |                                 ---                                 |
-|     **src/util**      |              Various util, export in the index.js file              |
-|        **---**        |                                 ---                                 |
-|     **src/i18n**      | Internationalized folder, save translation files in messages folder |
-|        **---**        |                                 ---                                 |
-|       **.env**        |                          Environment file                           |
-|   **jsconfig.json**   |                     VSCode config file (Alias)                      |
+|          Folder          |                                Desc                                 |
+| :----------------------: | :-----------------------------------------------------------------: |
+|       **src/api**        |                         Project api folder                          |
+|   **src/api/ajax.js**    |                    Encapsulate the axios library                    |
+|  **src/api/\*-api.js**   |                     APIs of various components                      |
+|         **---**          |                                 ---                                 |
+|      **src/assets**      |                       Style, media files, etc                       |
+|         **---**          |                                 ---                                 |
+|    **src/components**    |           Various components, export in the index.js file           |
+|         **---**          |                                 ---                                 |
+|      **src/pages**       |             Various pages, export in the index.js file              |
+|         **---**          |                                 ---                                 |
+|      **src/hooks**       |             Various hooks, export in the index.js file              |
+|         **---**          |                                 ---                                 |
+|      **src/redux**       |                 Create redux store, action, reducer                 |
+|         **---**          |                                 ---                                 |
+|      **src/config**      |                    Craco config and route config                    |
+|         **---**          |                                 ---                                 |
+|       **src/data**       |              Various data, export in the index.js file              |
+|         **---**          |                                 ---                                 |
+|       **src/util**       |              Various util, export in the index.js file              |
+|         **---**          |                                 ---                                 |
+|       **src/i18n**       | Internationalized folder, save translation files in messages folder |
+|         **---**          |                                 ---                                 |
+|         **.env**         |                          Environment file                           |
+|    **jsconfig.json**     |                     VSCode config file (Alias)                      |
+|         **---**          |                                 ---                                 |
+|     **eslintrc.js**      |                         Eslint config file                          |
+|    **eslintrignore**     |                         Eslint ignore file                          |
+|    **prettierrc.js**     |                        Prettier config file                         |
+|    **prettierignore**    |                        Prettier ignore file                         |
+| **commitlint.config.js** |                       Commitlint config file                        |
+|         **---**          |                                 ---                                 |
+|       **LICENSE**        |                            License file                             |
+|         **---**          |                                 ---                                 |
+
+---
 
 ## Project basic pages
 
