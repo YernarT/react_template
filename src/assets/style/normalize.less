@@ -11,8 +11,8 @@
 	}
 
 	&::-webkit-scrollbar {
-		width: 6px;
-		height: 6px;
+		width: 5px;
+		height: 5px;
 		background: transparent;
 	}
 
@@ -38,7 +38,19 @@ html {
 	line-height: 1.15; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
 
-	@media screen and (max-width: 576px) {
+	@media screen and (max-width: 265px) {
+		& {
+			font-size: 14px;
+		}
+	}
+
+	@media screen and (max-width: 346px) and (min-width: 265px) {
+		& {
+			font-size: 15px;
+		}
+	}
+
+	@media screen and (max-width: 576px) and (min-width: 346px) {
 		& {
 			font-size: 16px;
 		}
@@ -59,12 +71,17 @@ html {
 			font-size: 19px;
 		}
 	}
-	@media screen and (max-width: 1400px) and(min-width: 1200px) {
+	@media screen and (max-width: 1400px) and (min-width: 1200px) {
 		& {
 			font-size: 20px;
 		}
 	}
-	@media screen and (min-width: 1400px) {
+	@media screen and (max-width: 1600px) and (min-width: 1400px) {
+		& {
+			font-size: 21px;
+		}
+	}
+	@media screen and (min-width: 1600px) {
 		& {
 			font-size: 22px;
 		}
