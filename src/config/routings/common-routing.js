@@ -1,5 +1,6 @@
+import { ALL_AUTH, ALL_PERMISSION } from "@config";
+
 import { PageNotFoundPage } from "@pages";
-import { ALL_AUTH, ALL_PERMISSION } from "@config/routing.config";
 
 const commonRouting = [
 	{

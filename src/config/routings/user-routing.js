@@ -1,11 +1,12 @@
+import { requireAuth } from "@utils";
+
 import { UserHomePage } from "@pages";
 
 const userRouting = [
 	{
 		path: "/",
 		page: UserHomePage,
-		auth: [true],
-		permission: ["user"],
+		...requireAuth("user"),
 	},
 ];
 
