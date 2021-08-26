@@ -1,4 +1,4 @@
-import { DEBUG, ALL_AUTH, ALL_PERMISSION } from "@config";
+import { DEBUG, ALL_AUTH, ALL_PERMISSION } from "@config/const-values";
 
 import commonRouting from "@config/routings/common-routing";
 import authRouting from "@config/routings/auth-routing";
@@ -16,9 +16,12 @@ if (DEBUG) {
 	console.warn("DEBUG!");
 
 	routingConfig.forEach(conf => {
-		conf.auth = [...ALL_AUTH];
-		conf.permission = [...ALL_PERMISSION];
+		conf.auth = [...conf.auth, ...ALL_AUTH];
+		conf.permission = [...conf.permission, ...ALL_PERMISSION];
 	});
 }
+
+console.log(routingConfig);
+console.log(DEBUG, ALL_AUTH, ALL_PERMISSION);
 
 export default routingConfig;
