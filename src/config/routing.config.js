@@ -21,7 +21,4 @@ if (DEBUG) {
 	});
 }
 
-console.log(routingConfig);
-console.log(DEBUG, ALL_AUTH, ALL_PERMISSION);
-
 export default routingConfig;
