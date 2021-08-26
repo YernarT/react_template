@@ -1,18 +1,11 @@
 import { useEffect } from "react";
-import { localStorage } from "@utils";
 
-export default function useBeforeunload(data) {
+export default function useBeforeunload(fn, deps = []) {
 	useEffect(() => {
-		const handleBeforeunload = () => {
-			Object.entries(data).forEach(([key, value]) => {
-				localStorage.set(key, value);
-			});
-		};
-
-		window.addEventListener("beforeunload", handleBeforeunload);
+		window.addEventListener("beforeunload", fn);
 
 		return () => {
-			window.removeEventListener("beforeunload", handleBeforeunload);
+			window.removeEventListener("beforeunload", fn);
 		};
-	}, [data]);
+	}, deps);
 }
