@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { Route, Redirect, useLocation } from "react-router-dom";
 
 export default function RouteWithConfig({ config, jwt, userType }) {
 	const { pathname } = useLocation();
 
-	const targetConfig = config.find(conf => conf.path === pathname);
+	const targetConfig = useMemo(
+		() => config.find(conf => conf.path === pathname),
+		[pathname, config],
+	);
 
 	// 解决React app切换路径时, 滚动条不被维护的bug
 	useEffect(() => {
