@@ -1,4 +1,4 @@
-# [React App Template](https://it-is-it.web.app/docs/react-app-template) &middot; v0.1.1
+# [React App Template](https://it-is-it.web.app/docs/react-app-template) &middot; v0.1.3
 
 React App Template is a standard for building react project.
 
@@ -54,48 +54,6 @@ Almost every project will use redux, this code will put redux on your react app.
 **Long-term**
 
 - refactor by _TypeScript_
-
-## Project structure
-
-Folders and files other than those created by [CRA](https://reactjs.org/docs/create-a-new-react-app.html).
-
-|          Folder          |                                Desc                                 |
-| :----------------------: | :-----------------------------------------------------------------: |
-|       **src/api**        |                         Project api folder                          |
-|   **src/api/ajax.js**    |                    Encapsulate the axios library                    |
-|  **src/api/\*-api.js**   |                     APIs of various components                      |
-|         **---**          |                                 ---                                 |
-|      **src/assets**      |                       Style, media files, etc                       |
-|         **---**          |                                 ---                                 |
-|    **src/components**    |           Various components, export in the index.js file           |
-|         **---**          |                                 ---                                 |
-|      **src/pages**       |             Various pages, export in the index.js file              |
-|         **---**          |                                 ---                                 |
-|      **src/hooks**       |             Various hooks, export in the index.js file              |
-|         **---**          |                                 ---                                 |
-|      **src/redux**       |                 Create redux store, action, reducer                 |
-|         **---**          |                                 ---                                 |
-|      **src/config**      |                    Craco config and route config                    |
-|         **---**          |                                 ---                                 |
-|       **src/data**       |              Various data, export in the index.js file              |
-|         **---**          |                                 ---                                 |
-|       **src/util**       |              Various util, export in the index.js file              |
-|         **---**          |                                 ---                                 |
-|       **src/i18n**       | Internationalized folder, save translation files in messages folder |
-|         **---**          |                                 ---                                 |
-|         **.env**         |                          Environment file                           |
-|    **jsconfig.json**     |                     VSCode config file (Alias)                      |
-|         **---**          |                                 ---                                 |
-|     **eslintrc.js**      |                         Eslint config file                          |
-|    **eslintrignore**     |                         Eslint ignore file                          |
-|    **prettierrc.js**     |                        Prettier config file                         |
-|    **prettierignore**    |                        Prettier ignore file                         |
-| **commitlint.config.js** |                       Commitlint config file                        |
-|         **---**          |                                 ---                                 |
-|       **LICENSE**        |                            License file                             |
-|         **---**          |                                 ---                                 |
-
----
 
 ## Project basic pages
 
