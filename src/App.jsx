@@ -7,10 +7,12 @@ import {
 	message,
 	notification,
 } from "antd";
+import { RouteWithConfig } from "@components";
 
 import { routingConfig } from "@config";
-import { useAntdLocale, useBeforeunload, useConsole } from "@hooks";
-import { RouteWithConfig } from "@components";
+import { useAntdLocale, useBeforeunload } from "@hooks";
+
+import { localStorage } from "@utils";
 
 import "@assets/style/normalize.less";
 import "@assets/style/antd.less";
@@ -45,10 +47,11 @@ export default function App() {
 	} = useSelector(state => state);
 
 	// Refresh the page to save the data in Redux to LocalStorage
-	useBeforeunload({ user, page });
-
-	// Print ads infor to the console panel
-	useConsole();
+	useBeforeunload(() => {
+		Object.entries({ user, page }).forEach(([key, value]) => {
+			localStorage.set(key, value);
+		});
+	}, [user, page]);
 
 	return (
 		<AntdConfigProvider
