@@ -7,6 +7,8 @@ import { Result, Button, notification, message } from "antd";
 
 import { i18nTranslate, i18nLocales } from "@i18n";
 
+import { Paragraph, ParagraphWithUnderline } from "./style";
+
 export default function PageNotFoundPage() {
 	const dispath = useDispatch();
 
@@ -19,7 +21,9 @@ export default function PageNotFoundPage() {
 				extra={<Link to="/">Back Home</Link>}
 			/>
 			<hr />
-			<p>current language: {useSelector(state => state.page.locale)}</p>
+			<Paragraph color="red" is3d>
+				current language: {useSelector(state => state.page.locale)}
+			</Paragraph>
 
 			{Object.values(i18nLocales).map(el => (
 				<Fragment key={el.code}>
@@ -33,7 +37,7 @@ export default function PageNotFoundPage() {
 			))}
 
 			<hr />
-			<p>messgae test</p>
+			<ParagraphWithUnderline is3d>messgae test</ParagraphWithUnderline>
 			<Button onClick={() => message.success("hi")}>Create Message</Button>
 
 			<hr />

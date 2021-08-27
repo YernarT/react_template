@@ -163,8 +163,13 @@ module.exports = {
 		"no-buffer-constructor": "error",
 
 		// 这些规则 ↓ 与代码风格有关 ↓
-		// 一个缩进必须用2个空格替代
-		"indent": ["error", "tab", { "SwitchCase": 1 }],
+		// 缩进, 模板字符串内忽略
+		"indent": [
+			"error",
+			"tab",
+			{ "SwitchCase": 1 },
+			{ "ignoreNodes": ["TemplateLiteral > *"] },
+		],
 		// 回车格式
 		"linebreak-style": ["off", "windows"],
 		// 双引号
