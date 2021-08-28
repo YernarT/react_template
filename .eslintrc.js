@@ -167,8 +167,7 @@ module.exports = {
 		"indent": [
 			"error",
 			"tab",
-			{ "SwitchCase": 1 },
-			{ "ignoreNodes": ["TemplateLiteral > *"] },
+			{ "SwitchCase": 1, "ignoredNodes": ["TemplateLiteral *"] },
 		],
 		// 回车格式
 		"linebreak-style": ["off", "windows"],
