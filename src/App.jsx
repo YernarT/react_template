@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { BrowserRouter } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 import {
 	ConfigProvider as AntdConfigProvider,
@@ -10,9 +9,12 @@ import {
 import { RouteWithConfig } from "@components";
 
 import { routingConfig } from "@config";
-import { useAntdLocale, useBeforeunload } from "@hooks";
+import { useAntdLocale, useEventListener } from "@hooks";
 
 import { localStorage } from "@utils";
+
+import { useRecoilValue } from "recoil";
+import { userAtom, pageAtom } from "@recoil";
 
 import "@assets/style/normalize.less";
 import "@assets/style/antd.less";
@@ -39,26 +41,28 @@ notification.config({
 });
 
 export default function App() {
-	const {
-		user,
-		page,
-		user: { jwt, userType },
-		page: { locale },
-	} = useSelector(state => state);
+	const user = useRecoilValue(userAtom);
+	const page = useRecoilValue(pageAtom);
 
 	// Refresh the page to save the data in Redux to LocalStorage
-	useBeforeunload(() => {
+	const handleBeforeunload = useCallback(() => {
 		Object.entries({ user, page }).forEach(([key, value]) => {
 			localStorage.set(key, value);
 		});
 	}, [user, page]);
 
+	useEventListener("beforeunload", handleBeforeunload);
+
 	return (
 		<AntdConfigProvider
-			locale={useAntdLocale(locale)}
+			locale={useAntdLocale(page.locale)}
 			prefixCls="react-app-template">
 			<BrowserRouter>
-				<RouteWithConfig config={routingConfig} userType={userType} jwt={jwt} />
+				<RouteWithConfig
+					config={routingConfig}
+					userType={user.userType}
+					jwt={user.jwt}
+				/>
 			</BrowserRouter>
 		</AntdConfigProvider>
 	);
