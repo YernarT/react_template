@@ -1,6 +1,7 @@
 import axios from "axios";
 
-import reduxStore from "@redux/store";
+import { useRecoilValue } from "recoil";
+import { userAtom } from "@recoil";
 
 import { message } from "antd";
 
@@ -10,9 +11,7 @@ export const myPythonApiInstance = axios.create({
 });
 
 myPythonApiInstance.interceptors.request.use(config => {
-	const {
-		user: { jwt },
-	} = reduxStore.getState();
+	const { jwt } = useRecoilValue(userAtom);
 
 	if (jwt) {
 		config.headers["Authorization"] = `Bearer ${jwt}`;
