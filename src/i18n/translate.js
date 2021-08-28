@@ -1,6 +1,7 @@
 import i18nLanguages from "@i18n/messages";
 
-import reduxStore from "@redux/store";
+import { useRecoilValue } from "recoil";
+import { pageAtom } from "@recoil";
 
 /**
  * Todo:
@@ -9,8 +10,7 @@ import reduxStore from "@redux/store";
  */
 
 const translate = (id, values = {}) => {
-	const state = reduxStore.getState();
-	const { locale } = state.page;
+	const { locale } = useRecoilValue(pageAtom);
 
 	return i18nLanguages[locale][id];
 };

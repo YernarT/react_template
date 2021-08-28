@@ -1,14 +1,15 @@
-import React from "react";
+import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 
-import { Provider as ReduxProvider } from "react-redux";
-import reduxStore from "@redux/store";
+import { RecoilRoot } from "recoil";
 
 import App from "./App";
 
 ReactDOM.render(
-	<ReduxProvider store={reduxStore}>
-		<App />
-	</ReduxProvider>,
+	<StrictMode>
+		<RecoilRoot>
+			<App />
+		</RecoilRoot>
+	</StrictMode>,
 	document.getElementById("root"),
 );
