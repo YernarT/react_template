@@ -44,7 +44,7 @@ export default function App() {
 	const user = useRecoilValue(userAtom);
 	const page = useRecoilValue(pageAtom);
 
-	// Refresh the page to save the data in Redux to LocalStorage
+	// Refresh the page to save the data in Recoil to LocalStorage
 	const handleBeforeunload = useCallback(() => {
 		Object.entries({ user, page }).forEach(([key, value]) => {
 			localStorage.set(key, value);
