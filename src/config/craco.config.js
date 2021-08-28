@@ -23,7 +23,7 @@ module.exports = {
 			"@hooks": path.resolve("src/hooks"),
 			"@components": path.resolve("src/components"),
 			"@pages": path.resolve("src/pages"),
-			"@redux": path.resolve("src/redux"),
+			"@recoil": path.resolve("src/recoil"),
 			"@utils": path.resolve("src/utils"),
 			"@data": path.resolve("src/data"),
 			"@i18n": path.resolve("src/i18n"),

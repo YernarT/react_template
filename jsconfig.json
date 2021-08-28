@@ -7,7 +7,7 @@
 			"@config/*": ["src/config/*"],
 			"@components/*": ["src/components/*"],
 			"@pages/*": ["src/pages/*"],
-			"@redux/*": ["src/redux/*"],
+			"@recoil/*": ["src/recoil/*"],
 			"@utils/*": ["src/utils/*"],
 			"@data/*": ["src/data/*"],
 			"@i18n/*": ["src/i18n/*"]

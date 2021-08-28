@@ -29,9 +29,9 @@
 		"prop-types": "^15.7.2",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
-		"react-redux": "^7.2.2",
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "4.0.3",
+		"recoil": "^0.4.1",
 		"redux": "3.7.2",
 		"redux-thunk": "^2.3.0",
 		"shortid": "^2.2.16",
@@ -42,8 +42,7 @@
 		"eslint": "^7.32.0",
 		"eslint-plugin-react": "^7.24.0",
 		"prettier": "^2.3.2",
-		"raw-loader": "^4.0.2",
-		"redux-devtools-extension": "^2.13.9"
+		"raw-loader": "^4.0.2"
 	},
 	"scripts": {
 		"start": "craco start",
