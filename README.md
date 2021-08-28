@@ -2,7 +2,7 @@
 
 React App Template is a standard for building react project.
 
-**Comprehensive:** Created more structures used in actual projects, like: _components_, _pages_, _hooks_, _redux_, _i18n_, etc, reduce repetitive work and start projects quickly.
+**Comprehensive:** Created more structures used in actual projects, like: _components_, _pages_, _hooks_, _recoil_, _i18n_, etc, reduce repetitive work and start projects quickly.
 
 **Scalable:** It is not a fixed structure, it can be reduced or added according to the actual needs of the project.
 
@@ -27,23 +27,75 @@ You can improve it by sending pull requests to [this repository](https://github.
 ## Examples
 
 ```jsx
-import React from "react";
+// index.js
+import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 
-import { Provider as ReduxProvider } from "react-redux";
-import reduxStore from "@redux/store";
+import { RecoilRoot } from "recoil";
 
 import App from "./App";
 
 ReactDOM.render(
-	<ReduxProvider store={reduxStore}>
-		<App />
-	</ReduxProvider>,
+	<StrictMode>
+		<RecoilRoot>
+			<App />
+		</RecoilRoot>
+	</StrictMode>,
 	document.getElementById("root"),
 );
 ```
 
-Almost every project will use redux, this code will put redux on your react app.
+Almost every project will use state management tool, this code will put recoil on your react app.
+
+```jsx
+// App.jsx
+import React, { useCallback } from "react";
+import { BrowserRouter } from "react-router-dom";
+
+import { ConfigProvider as AntdConfigProvider } from "antd";
+import { RouteWithConfig } from "@components";
+
+import { routingConfig } from "@config";
+import { useAntdLocale, useEventListener } from "@hooks";
+
+import { localStorage } from "@utils";
+
+import { useRecoilValue } from "recoil";
+import { userAtom, pageAtom } from "@recoil";
+
+import "@assets/style/normalize.less";
+import "@assets/style/antd.less";
+
+export default function App() {
+	const user = useRecoilValue(userAtom);
+	const page = useRecoilValue(pageAtom);
+
+	// Refresh the page to save the data in Recoil to LocalStorage
+	const handleBeforeunload = useCallback(() => {
+		Object.entries({ user, page }).forEach(([key, value]) => {
+			localStorage.set(key, value);
+		});
+	}, [user, page]);
+
+	useEventListener("beforeunload", handleBeforeunload);
+
+	return (
+		<AntdConfigProvider
+			locale={useAntdLocale(page.locale)}
+			prefixCls="react-app-template">
+			<BrowserRouter>
+				<RouteWithConfig
+					config={routingConfig}
+					userType={user.userType}
+					jwt={user.jwt}
+				/>
+			</BrowserRouter>
+		</AntdConfigProvider>
+	);
+}
+```
+
+Initialize the app, this code will initialize routing, persistent state management, internationalization and antd global style configuration.
 
 ## Features
 
