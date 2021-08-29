@@ -6,11 +6,11 @@ module.exports = {
 		port: 4000,
 		disableHostCheck: true,
 		proxy: {
-			"my-python-api": {
-				target: "http://127.0.0.1:8000",
+			"/json-server": {
+				target: "http://127.0.0.1:4100",
 				changeOrigin: true,
 				secure: false,
-				pathRewrite: { "^my-python-api": "" },
+				pathRewrite: { "^/json-server": "" },
 			},
 		},
 	},
@@ -27,6 +27,11 @@ module.exports = {
 			"@utils": path.resolve("src/utils"),
 			"@data": path.resolve("src/data"),
 			"@i18n": path.resolve("src/i18n"),
+		},
+		configure: webpackConfig => {
+			// console.log(webpackConfig);
+
+			return webpackConfig;
 		},
 	},
 

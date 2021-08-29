@@ -1,17 +1,16 @@
 import axios from "axios";
 
-import { useRecoilValue } from "recoil";
-import { userAtom } from "@recoil";
+import { localStorage } from "@utils";
 
 import { message } from "antd";
 
-export const myPythonApiInstance = axios.create({
-	baseURL: "my-python-api",
+export const jsonServerInstance = axios.create({
+	baseURL: "/json-server",
 	validateStatus: status => status >= 200 && status < 300,
 });
 
-myPythonApiInstance.interceptors.request.use(config => {
-	const { jwt } = useRecoilValue(userAtom);
+jsonServerInstance.interceptors.request.use(config => {
+	const { jwt } = localStorage.get("user");
 
 	if (jwt) {
 		config.headers["Authorization"] = `Bearer ${jwt}`;
@@ -20,13 +19,15 @@ myPythonApiInstance.interceptors.request.use(config => {
 	return config;
 });
 
-myPythonApiInstance.interceptors.response.use(
+jsonServerInstance.interceptors.response.use(
 	// return data
 	res => res.data,
 	err => {
 		// TODO:
 		// 当verify jwt返回false时, 执行"退出"动作
 		// 提醒并跳转到登录页
+
+		console.log(err);
 
 		if (axios.isCancel(err)) {
 			// Interrupt the Promise chain
