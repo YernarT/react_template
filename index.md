@@ -1,4 +1,4 @@
-# [React App Template](https://it-is-it.web.app/docs/react-app-template) &middot; v0.2.0
+# [React App Template](https://it-is-it.web.app/docs/react-app-template) &middot; v0.3.1
 
 React App Template is a standard for building react project.
 
