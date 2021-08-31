@@ -31,15 +31,34 @@
 }
 
 // drawer component
-.upskill-drawer {
-	.upskill-drawer-header {
+.react-app-template-drawer {
+	.react-app-template-drawer-header {
 		padding: 15px;
 
-		.upskill-drawer-title {
+		.react-app-template-drawer-title {
 			font-size: 1.25rem;
 			overflow: hidden;
 			white-space: nowrap;
 			text-overflow: ellipsis;
+		}
+	}
+}
+
+// popconfirm component
+.react-app-template-popover {
+	.react-app-template-popover-message {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
+		span[role="img"] {
+			position: static;
+			align-self: flex-start;
+		}
+
+		.react-app-template-popover-message-title {
+			line-height: 1;
+			padding-left: 1.5rem;
 		}
 	}
 }
