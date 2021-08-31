@@ -1,120 +1,48 @@
-# [React App Template](https://it-is-it.web.app/docs/react-app-template) &middot; v0.3.1
+# [React App Template](https://it-is-it.web.app/docs/react-app-template) &middot; v0.3.2
 
-React App Template is a standard for building react project.
+React App Template 是构建 React 项目的标准。
 
-**Comprehensive:** Created more structures used in actual projects, like: _components_, _pages_, _hooks_, _recoil_, _i18n_, etc, reduce repetitive work and start projects quickly.
+**全面性:** 提供了更多在实际项目中使用的结构, 如：_components_、_pages_、_hooks_、_api_, _recoil_、_i18n_ 等, 减少重复工作, 快速启动项目。
 
-**Scalable:** It is not a fixed structure, it can be reduced or added according to the actual needs of the project.
+**可扩展:** 它不是一个固定的结构, 可以根据项目的实际需要减少或增加。
 
-**Maintained:** The architecture is used by many of our real projects, and the architecture will be updated every once in a while, and the issues raised by the community will also be noted and resolved.
+**被维护:** 该架构被[我们](https://it-is-it.web.app/)很多真实的项目所使用, 架构会每隔一段时间更新一次, 社区提出的问题也会被注意到和解决。
 
-[Learn how to use React App Template in your own project](https://it-is-it.web.app/docs/react-app-template/getting-started).
+[了解如何在自己的项目中使用 React App Template](https://it-is-it.web.app/docs/react-app-template/getting-started)。
 
-## Installation
+## 安装
 
-- From [github repository](https://github.com/YernarT/react-app-template).
+- 从 [github 仓库](https://github.com/YernarT/react-app-template)。
 
-## Documentation
+## 简约文档
 
-React App Template has been designed from the very beginning as a situation where multiple projects are developed at the same time.
+React App Template 从一开始就被设计为同时开发多个项目。
 
-You can find the React App Template documentation [on the website](https://it-is-it.web.app/docs).
+你可以找到 React App Template 详细文档在 [官网](https://it-is-it.web.app/docs)。
 
-Check out the [Getting Started](https://it-is-it.web.app/docs/react-app-template/getting-started) page for a quick overview.
+您可以通过向 [此存储库](https://github.com/YernarT/react-app-template) 发送拉取请求来改进它。
 
-You can improve it by sending pull requests to [this repository](https://github.com/YernarT/react-app-template).
+## 未来计划
 
-## Examples
+**短期**
 
-```jsx
-// index.js
-import React, { StrictMode } from "react";
-import ReactDOM from "react-dom";
+- 添加 _commitlint_
+- 添加 _i18n_ 支持对象参数
 
-import { RecoilRoot } from "recoil";
+**长久**
 
-import App from "./App";
+- 添加 单元测试
+- 修复 _craco eslint loader_ 找不到的警告
+- 使用 _TypeScript_ 重构
 
-ReactDOM.render(
-	<StrictMode>
-		<RecoilRoot>
-			<App />
-		</RecoilRoot>
-	</StrictMode>,
-	document.getElementById("root"),
-);
-```
+## 路由
 
-Almost every project will use state management tool, this code will put recoil on your react app.
-
-```jsx
-// App.jsx
-import React, { useCallback } from "react";
-import { BrowserRouter } from "react-router-dom";
-
-import { ConfigProvider as AntdConfigProvider } from "antd";
-import { RouteWithConfig } from "@components";
-
-import { routingConfig } from "@config";
-import { useAntdLocale, useEventListener } from "@hooks";
-
-import { localStorage } from "@utils";
-
-import { useRecoilValue } from "recoil";
-import { userAtom, pageAtom } from "@recoil";
-
-import "@assets/style/normalize.less";
-import "@assets/style/antd.less";
-
-export default function App() {
-	const user = useRecoilValue(userAtom);
-	const page = useRecoilValue(pageAtom);
-
-	// Refresh the page to save the data in Recoil to LocalStorage
-	const handleBeforeunload = useCallback(() => {
-		Object.entries({ user, page }).forEach(([key, value]) => {
-			localStorage.set(key, value);
-		});
-	}, [user, page]);
-
-	useEventListener("beforeunload", handleBeforeunload);
-
-	return (
-		<AntdConfigProvider
-			locale={useAntdLocale(page.locale)}
-			prefixCls="react-app-template">
-			<BrowserRouter>
-				<RouteWithConfig
-					config={routingConfig}
-					userType={user.userType}
-					jwt={user.jwt}
-				/>
-			</BrowserRouter>
-		</AntdConfigProvider>
-	);
-}
-```
-
-Initialize the app, this code will initialize routing, persistent state management, internationalization and antd global style configuration.
-
-## Features
-
-**Recent**
-
-- Add _commitlint_
-
-**Long-term**
-
-- refactor by _TypeScript_
-
-## Project basic pages
-
-|   URL    |      Page      |         Desc          |
-| :------: | :------------: | :-------------------: |
-|   `/`    |   User Home    |    User home page     |
-| `/login` |     Login      |      Login page       |
-|  `/404`  | Page not found | "Page not found" page |
+|   URL    |     Page     |     Desc     |
+| :------: | :----------: | :----------: |
+|   `/`    |   UserHome   |   用户主页   |
+| `/login` |    Login     |   登录页面   |
+|  `/404`  | PageNotFound | 不存在的页面 |
 
 ### License
 
-React App Template is [MIT licensed](./LICENSE).
+React App Template 是 [MIT 许可](./LICENSE)。
