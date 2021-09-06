@@ -37,13 +37,13 @@
 		"styled-components": "^5.3.1"
 	},
 	"devDependencies": {
+		"craco": "^0.0.3",
+		"craco-antd": "^1.19.0",
 		"eslint": "^7.32.0",
 		"eslint-plugin-react": "^7.24.0",
 		"json-server": "^0.16.3",
 		"prettier": "^2.3.2",
-		"raw-loader": "^4.0.2",
-		"craco": "^0.0.3",
-		"craco-antd": "^1.19.0"
+		"raw-loader": "^4.0.2"
 	},
 	"scripts": {
 		"start": "craco start FAST_REFRESH=true",
@@ -51,7 +51,9 @@
 		"test": "craco test",
 		"eject": "react-scripts eject",
 		"json-server": "json-server --watch --port 4100 __json_server_mock__/db.json",
-		"lint": "eslint ."
+		"eslint": "eslint .",
+		"prettier-lint": "prettier --check .",
+		"prettier-format": "prettier --write ."
 	},
 	"cracoConfig": "src/config/craco.config.js",
 	"eslintConfig": {
