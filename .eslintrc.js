@@ -188,7 +188,7 @@ module.exports = {
 			},
 		],
 		// 限制变量名长度
-		"id-length": ["error", { "min": 2, "max": 40 }],
+		"id-length": ["error", { "min": 1, "max": 40 }],
 		// 代码块嵌套的深度禁止超过 5 层
 		"max-depth": ["error", 5],
 		// 回调函数嵌套禁止超过 3 层, 多了用 async await 替代
