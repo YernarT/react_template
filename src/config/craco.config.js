@@ -49,19 +49,19 @@ module.exports = {
 							 */
 
 							"@ant-prefix": "react-app-template",
-							"@primary-color": "rgb(17, 236, 229)", // primary color for all components
+							"@primary-color": "darkblue", // primary color for all components
 							"@text-color": "rgba(0, 0, 0, 0.85)", // major text color
 							"@text-color-secondary": "rgba(0, 0, 0, 0.45)", // secondary text color
-							"@link-color": "rgb(17, 236, 229)", // link color
+							"@link-color": "blue", // link color
 							"@success-color": "#52c41a", // success state color
 							"@warning-color": "#faad14", // warning state color
 							"@error-color": " #f5222d", // error state color
 							"@font-size-base": "1rem", // major text font size
 							"@heading-color": "rgba(0, 0, 0, 1)", // heading text color
 							"@disabled-color": "rgba(0, 0, 0, 0.25)", // disable state color
-							"@border-radius-base": "0px", // major border radius
-							"@border-color-base": "rgb(17, 236, 229)", // major border color
-							"@box-shadow-base": "2px 2px 5px rgb(17, 236, 229)", // major shadow for layers
+							"@border-radius-base": "12px", // major border radius
+							"@border-color-base": "#000", // major border color
+							"@box-shadow-base": "2px 2px 5px #000", // major shadow for layers
 						},
 						javascriptEnabled: true,
 					},
