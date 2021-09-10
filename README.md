@@ -1,4 +1,4 @@
-# [React App Template](https://it-is-it.web.app/docs/react-app-template) &middot; v0.3.2
+# [React App Template](https://it-is-it.web.app/docs/react-app-template) &middot; v0.3.4
 
 React App Template 是构建 React 项目的标准。
 
@@ -27,11 +27,11 @@ React App Template 从一开始就被设计为同时开发多个项目。
 **短期**
 
 - 添加 _commitlint_
-- 添加 _i18n_ 支持对象参数
 
 **长久**
 
 - 添加 单元测试
+- 升级 _React18_ 版本
 - 修复 _craco eslint loader_ 找不到的警告
 - 使用 _TypeScript_ 重构
 
