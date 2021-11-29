@@ -1,6 +1,6 @@
-# [React App Template](https://it-is-it.web.app/docs/react-app-template) &middot; v0.3.4
+# Quick start for React | comprehensive &middot; v0.4.0
 
-React App Template 是构建 React 项目的标准。
+comprehensive 版本是**企业级**项目中使用的 React架构方案 的标准。
 
 **全面性:** 提供了更多在实际项目中使用的结构, 如：_components_、_pages_、_hooks_、_api_, _recoil_、_i18n_ 等, 减少重复工作, 快速启动项目。
 
