@@ -1,34 +1,43 @@
-import axios from "axios";
+/**
+ * 封住 ajax 函数, 统一处理请求
+ * 对 axios库 进行二次封装
+ */
+import axios from 'axios';
 
-import { localStorage } from "@utils";
+import { localStorage } from '@utils';
 
-import { message } from "antd";
-
+/**
+ * 此处创建了一个请求实例, 编写请求拦截器逻辑
+ * 如果App中 使用了多个不同的后端接口
+ * API风格不同的时候, 推荐创建多个请求实例管理
+ * */
 export const jsonServerInstance = axios.create({
-	baseURL: "/json-server",
+	baseURL: '/json-server',
 	validateStatus: status => status >= 200 && status < 300,
 });
 
+// 请求拦截器
 jsonServerInstance.interceptors.request.use(config => {
-	const { jwt } = localStorage.get("user");
+	// 假设后端使用的是 JWT验证方式, 我们将 JWT 储存在本地, 且只有在登陆和退出时会触发更新(JWT)
+	const { jwt } = localStorage.get('user');
 
 	if (jwt) {
-		config.headers["Authorization"] = `Bearer ${jwt}`;
+		// 根据需求自行添加 请求头
+		config.headers['Authorization'] = `Bearer ${jwt}`;
 	}
 
 	return config;
 });
 
+// 响应拦截器
 jsonServerInstance.interceptors.response.use(
-	// return data
 	res => res.data,
 	err => {
-		// TODO:
-		// 当verify jwt返回false时, 执行"退出"动作
-		// 提醒并跳转到登录页
-
-		console.log(err);
-
+		/**
+		 * 此处只是一个栗子 🌰
+		 * 根据项目需求自行修改
+		 * 有更好的意见可以提 issue, pr
+		 */
 		if (axios.isCancel(err)) {
 			// Interrupt the Promise chain
 			return new Promise(() => {});
@@ -37,12 +46,8 @@ jsonServerInstance.interceptors.response.use(
 		if (err.response && err.response.status) {
 			switch (err.response.status) {
 				case 500:
-					// message.error("Сервер не работает, повторите попытку позже");
-					message.error("server is down, please try again later");
 					return Promise.reject(new Error({ err: 500 }));
 				case 404:
-					// message.error("Oшибка клиента, дождитесь ремонта");
-					message.error("client error, please wait for repair");
 					return Promise.reject(new Error({ err: 404 }));
 				default:
 					return Promise.reject(err.response.data);
@@ -50,12 +55,9 @@ jsonServerInstance.interceptors.response.use(
 		}
 
 		if (err.response === undefined) {
-			// message.error("Сервер не работает, повторите попытку позже");
-			message.error("server is down, please try again later");
-
 			return Promise.reject(new Error({ err: 500 }));
 		}
 
-		return Promise.reject(err);
+		return Promise.reject(new Error(err));
 	},
 );
