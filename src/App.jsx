@@ -1,23 +1,25 @@
-import React, { useCallback } from "react";
-import { BrowserRouter } from "react-router-dom";
+import React, { useCallback, Suspense } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
+import { useRecoilValue } from 'recoil';
+import { userAtom, pageAtom } from '@recoil';
+
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import {
 	ConfigProvider as AntdConfigProvider,
 	message,
 	notification,
-} from "antd";
-import { RouteWithConfig } from "@components";
+} from 'antd';
+import { RouteWithConfig, Loading } from '@components/common';
 
-import { routingConfig } from "@config";
-import { useAntdLocale, useEventListener } from "@hooks";
+import { useEventListener } from 'ahooks';
+import { useAntdLocale } from '@hooks';
+import { localStorage } from '@utils';
+import { routingConfig } from '@config';
 
-import { localStorage } from "@utils";
-
-import { useRecoilValue } from "recoil";
-import { userAtom, pageAtom } from "@recoil";
-
-import "@assets/style/normalize.less";
-import "@assets/style/antd.less";
+import theme from '@assets/style/theme';
+import '@assets/style/customize.less';
+import '@assets/style/antd.less';
 
 // Antd message component global config
 message.config({
@@ -25,18 +27,18 @@ message.config({
 	duration: 3,
 	maxCount: 4,
 	rtl: false,
-	prefixCls: "react-app-template-message",
+	prefixCls: 'quick-start-react-message',
 	getContainer: () => document.body,
 });
 
 // Antd notification component global config
 notification.config({
-	placement: "bottomRight",
+	placement: 'bottomRight',
 	top: 24,
 	bottom: 24,
 	duration: 4.5,
 	rtl: false,
-	prefixCls: "react-app-template-notification",
+	prefixCls: 'quick-start-react-notification',
 	getContainer: () => document.body,
 });
 
@@ -51,19 +53,19 @@ export default function App() {
 		});
 	}, [user, page]);
 
-	useEventListener("beforeunload", handleBeforeunload);
+	useEventListener('beforeunload', handleBeforeunload);
 
 	return (
-		<AntdConfigProvider
-			locale={useAntdLocale(page.locale)}
-			prefixCls="react-app-template">
-			<BrowserRouter>
-				<RouteWithConfig
-					config={routingConfig}
-					userType={user.userType}
-					jwt={user.jwt}
-				/>
-			</BrowserRouter>
-		</AntdConfigProvider>
+		<StyledThemeProvider theme={theme}>
+			<AntdConfigProvider
+				locale={useAntdLocale(page.locale)}
+				prefixCls="quick-start-react">
+				<BrowserRouter>
+					<Suspense fallback={<Loading />}>
+						<RouteWithConfig config={routingConfig} />
+					</Suspense>
+				</BrowserRouter>
+			</AntdConfigProvider>
+		</StyledThemeProvider>
 	);
 }
