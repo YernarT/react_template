@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 	<head>
 		<meta charset="utf-8" />
 		<meta
@@ -7,16 +7,26 @@
 			content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1"
 		/>
 		<meta name="google" content="notranslate" />
-		<meta name="theme-color" content="#000" />
-		<meta name="description" content="React App Template" />
+		<meta name="theme-color" content="#fff" />
 		<meta name="author" content="Yernar.T" />
+		<meta name="description" content="Quick start for React application" />
 
 		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+		<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-		<title>React App Template</title>
+		<title>comprehensive</title>
 	</head>
 	<body>
 		<noscript>You need to enable JavaScript to run this app.</noscript>
 		<div id="root"></div>
+		<script>
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('service-worker.js').then(
+					value => {},
+					reason => {},
+				);
+			}
+		</script>
 	</body>
 </html>
