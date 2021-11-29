@@ -1,24 +1,18 @@
-import { DEBUG, ALL_AUTH, ALL_PERMISSION } from "@config/const-values";
+/**
+ * comprehensive版本 核心组件之一
+ * 路由配置
+ *
+ * 此处只是一个栗子 🌰
+ * 根据项目需求自行修改
+ * 有更好的意见可以提 issue, pr
+ */
 
-import commonRouting from "@config/routings/common-routing";
-import authRouting from "@config/routings/auth-routing";
-import userRouting from "@config/routings/user-routing";
-import adminRouting from "@config/routings/admin-routing";
+import commonRouting from 'src/config/routings/common-routing';
+import authRouting from 'src/config/routings/auth-routing';
 
 const routingConfig = [
 	...authRouting,
-	...userRouting,
-	...adminRouting,
 	...commonRouting,
 ];
-
-if (DEBUG) {
-	console.warn("DEBUG!");
-
-	routingConfig.forEach(conf => {
-		conf.auth = [...conf.auth, ...ALL_AUTH];
-		conf.permission = [...conf.permission, ...ALL_PERMISSION];
-	});
-}
 
 export default routingConfig;
