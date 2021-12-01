@@ -1,11 +1,12 @@
 /**
- * comprehensive版本 核心组件之一
- * 根据config中的routingConfig返回对应路由
+ * comprehensive版本 核心功能之一
+ *
+ * 根据 config 中的 routingConfig 返回对应路由
  * 配合后端的 RBAC 场景
  *
- * 此处只是一个栗子 🌰
- * 根据项目需求自行修改
+ * 此处只是一个案例, 根据实际的项目需求自行修改
  * 有更好的意见可以提 issue, pr
+ * Github地址: https://github.com/YernarT/quick-start-for-react
  */
 
 import React, { useMemo } from 'react';
