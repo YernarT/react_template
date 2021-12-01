@@ -1,6 +1,10 @@
 /**
- * 封住 ajax 函数, 统一处理请求
+ * 封装 ajax 函数, 统一处理请求
  * 对 axios库 进行二次封装
+ *
+ * 此处只是一个案例, 根据实际的项目需求自行修改
+ * 有更好的意见可以提 issue, pr
+ * Github地址: https://github.com/YernarT/quick-start-for-react
  */
 import axios from 'axios';
 
@@ -33,11 +37,6 @@ jsonServerInstance.interceptors.request.use(config => {
 jsonServerInstance.interceptors.response.use(
 	res => res.data,
 	err => {
-		/**
-		 * 此处只是一个栗子 🌰
-		 * 根据项目需求自行修改
-		 * 有更好的意见可以提 issue, pr
-		 */
 		if (axios.isCancel(err)) {
 			// Interrupt the Promise chain
 			return new Promise(() => {});
