@@ -12,3 +12,5 @@
 export { default as useAntdLocale } from '@hooks/useAntdLocale';
 
 export { default as useOrientation } from '@hooks/useOrientation';
+
+export { default as use1vh } from '@hooks/use1vh';
