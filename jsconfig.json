@@ -9,6 +9,7 @@
 			"@pages/*": ["src/pages/*"],
 			"@recoil/*": ["src/recoil/*"],
 			"@utils/*": ["src/utils/*"],
+			"@hooks/*": ["src/hooks/*"],
 			"@data/*": ["src/data/*"],
 			"@i18n/*": ["src/i18n/*"]
 		},
