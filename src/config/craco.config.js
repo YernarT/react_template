@@ -1,11 +1,11 @@
 /**
- * comprehensive版本 核心组件之一
+ * comprehensive版本 核心功能之一
  * CRACO - Creact React App Config Override
  * 外层配置 (Webpack, Babel...)
  *
- * 此处只是一个栗子 🌰
- * 根据项目需求自行修改
+ * 此处只是一个案例, 根据实际的项目需求自行修改
  * 有更好的意见可以提 issue, pr
+ * Github地址: https://github.com/YernarT/quick-start-for-react
  */
 
 const CracoAntDesignPlugin = require('craco-antd');
@@ -70,18 +70,18 @@ module.exports = {
 							 */
 
 							'@ant-prefix': 'quick-start-react',
-							'@primary-color': '#FF005C', // primary color for all components
-							'@text-color': '#FFF', // major text color
+							'@primary-color': '#4990E8', // primary color for all components
+							'@text-color': '#000', // major text color
 							'@text-color-secondary': 'rgba(0, 0, 0, 0.45)', // secondary text color
-							'@link-color': '#40BFFF', // link color
+							'@link-color': '#0058C4', // link color
 							'@success-color': '#53D1B6', // success state color
 							'@warning-color': '#FFC833', // warning state color
 							'@error-color': ' #F2263E', // error state color
 							'@font-size-base': '1rem', // major text font size
-							'@heading-color': '#FFF', // heading text color
+							'@heading-color': '#2D2E30', // heading text color
 							'@disabled-color': 'rgba(0, 0, 0, 0.25)', // disable state color
 							'@border-radius-base': '6px', // major border radius
-							'@border-color-base': '#FFF', // major border color
+							'@border-color-base': '#241927', // major border color
 							'@box-shadow-base': '0 0 4px rgba(0, 0, 0, 0.6)', // major shadow for layers
 						},
 						javascriptEnabled: true,
