@@ -6,14 +6,19 @@
 
 import React from 'react';
 
+import { useRecoilValue } from 'recoil';
+import { pageAtom } from '@recoil';
+
 import { Spin } from 'antd';
 
 import { LoadingContainer } from './styles';
 
 export default function Loading() {
+	const page = useRecoilValue(pageAtom);
+
 	return (
-		<LoadingContainer>
-			<Spin tip="加载中..." size="large" />
+		<LoadingContainer viewMode={page.viewMode}>
+			<Spin tip="加载中..." size="large" className="spinner" />
 		</LoadingContainer>
 	);
 }
