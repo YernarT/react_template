@@ -6,8 +6,14 @@
 
 import React from 'react';
 
+import { Spin } from 'antd';
+
 import { LoadingContainer } from './styles';
 
 export default function Loading() {
-	return <LoadingContainer>加载中...</LoadingContainer>;
+	return (
+		<LoadingContainer>
+			<Spin tip="加载中..." size="large" />
+		</LoadingContainer>
+	);
 }
