@@ -14,17 +14,19 @@ export default {
 		if (viewMode === 'dark') {
 			return {
 				fontWeight: 700,
-				fontSize: '1.14rem',
+				fontSize: '1.13rem',
 				color: 'rgba(255, 255, 255, 0.85)',
 
+				whiteSpace: 'nowrap',
 				marginBottom: 0,
 			};
 		} else {
 			return {
 				fontWeight: 700,
-				fontSize: '1.14rem',
+				fontSize: '1.13rem',
 				color: 'rgba(0, 0, 0, 0.85)',
 
+				whiteSpace: 'nowrap',
 				marginBottom: 0,
 			};
 		}
@@ -33,7 +35,7 @@ export default {
 	text: viewMode => {
 		if (viewMode === 'dark') {
 			return {
-				fontWeight: 600,
+				fontWeight: 500,
 				fontSize: '0.86rem',
 				color: 'rgba(255, 255, 255, 0.85)',
 
@@ -41,7 +43,7 @@ export default {
 			};
 		} else {
 			return {
-				fontWeight: 600,
+				fontWeight: 500,
 				fontSize: '0.86rem',
 				color: 'rgba(0, 0, 0, 0.85)',
 
