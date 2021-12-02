@@ -12,6 +12,16 @@ import { sleep } from '@utils';
 
 const commonRouting = [
 	{
+		path: '/',
+		component: () =>
+			lazy(async () => {
+				// 延迟返回, 可以有效防止切换页面时的闪屏(加载Loading组件, 随后迅速卸载)
+				// 根据项目需求更改时间或移除
+				await sleep(360);
+				return import('@pages/common/HomePage');
+			}),
+	},
+	{
 		path: '/404',
 		component: () =>
 			lazy(async () => {
