@@ -108,6 +108,8 @@ export const NavbarContainer = styled.div`
 
 export const Content = styled.main`
 	background-color: rgba(255, 255, 255, 0.14);
+	
+	overflow: hidden auto;
 
 	${responsiveSpace('margin')}
 
