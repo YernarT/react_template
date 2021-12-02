@@ -84,7 +84,7 @@ export default function App() {
 				prefixCls="quick-start-react">
 				<BrowserRouter>
 					<Suspense fallback={<Loading />}>
-						<RouteWithConfig config={routingConfig} />
+						<RouteWithConfig config={routingConfig} role={user.role} />
 					</Suspense>
 				</BrowserRouter>
 			</AntdConfigProvider>
