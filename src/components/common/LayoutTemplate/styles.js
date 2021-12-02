@@ -10,7 +10,7 @@ import styled, { css } from 'styled-components';
  *
  * @param {'margin'|'padding'} spaceType
  * 空间类型
- * 
+ *
  * @returns {Object}
  * 返回响应式空间对象
  */
@@ -85,7 +85,7 @@ export const LayoutTemplateContainer = styled.div`
 
 export const NavbarContainer = styled.div`
 	box-shadow: 0 2px 16px
-		${({ viewMode }) => (viewMode === 'dark' ? '#004eff' : '#007ad1')};
+		${({ viewMode }) => (viewMode === 'dark' ? '#002373' : '#007ad1')};
 
 	display: flex;
 	justify-content: center;
@@ -107,8 +107,9 @@ export const NavbarContainer = styled.div`
 `;
 
 export const Content = styled.main`
-	background-color: rgba(255, 255, 255, 0.14);
-	
+	background-color: ${({ viewMode }) =>
+		viewMode === 'dark' ? '#1b335f' : 'rgba(255, 255, 255, 0.14)'};
+
 	overflow: hidden auto;
 
 	${responsiveSpace('margin')}
