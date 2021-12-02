@@ -44,6 +44,7 @@ module.exports = {
 			'@utils': path.resolve('src/utils'),
 			'@data': path.resolve('src/data'),
 			'@hooks': path.resolve('src/hooks'),
+			'@i18n': path.resolve('src/i18n'),
 		},
 		configure: webpackConfig => {
 			// console.log(webpackConfig);
