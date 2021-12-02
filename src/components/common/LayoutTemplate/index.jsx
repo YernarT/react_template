@@ -10,6 +10,7 @@ import { useRecoilValue } from 'recoil';
 import { pageAtom } from '@recoil';
 
 import { use1vh } from 'src/hooks';
+import { i18nTranslate } from '@i18n';
 
 import {
 	LayoutTemplateContainer,
@@ -24,43 +25,32 @@ export default function LayoutTemplate({ children }) {
 
 	return (
 		<LayoutTemplateContainer viewMode={page.viewMode} oneVh={oneVh}>
-			<Navbar viewMode={page.viewMode} />
+			<Navbar page={page} />
 
 			<Content viewMode={page.viewMode}>{children}</Content>
-			<Footer viewMode={page.viewMode} />
+			<Footer page={page} />
 		</LayoutTemplateContainer>
 	);
 }
 
 // 此处只是一个案例, 真实开发可以拆分文件编写
-function Navbar({ viewMode }) {
+function Navbar({ page }) {
 	return (
 		<>
-			<NavbarContainer viewMode={viewMode}>
+			<NavbarContainer viewMode={page.viewMode}>
 				<h1 className="title">Quick start for React | comprehensive</h1>
-
-				{/* <p
-					className="change-view-mode"
-					onClick={() => {
-						if (viewMode === 'dark') {
-							changeViewMode('light');
-						} else {
-							changeViewMode('dark');
-						}
-					}}>
-					点击切换 view mode
-				</p> */}
 			</NavbarContainer>
 		</>
 	);
 }
 
 // 此处只是一个案例, 真实开发可以拆分文件编写
-function Footer({ viewMode }) {
+function Footer({ page }) {
 	return (
-		<FooterContainer viewMode={viewMode}>
+		<FooterContainer viewMode={page.viewMode}>
 			<h2 className="title">
-				Quick start for React ©2021 Created by IT IS IT Studio
+				Quick start for React ©2021{' '}
+				{i18nTranslate('Created by IT IS IT Studio', page.locale)}
 			</h2>
 		</FooterContainer>
 	);

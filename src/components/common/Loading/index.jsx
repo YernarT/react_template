@@ -11,6 +11,8 @@ import { pageAtom } from '@recoil';
 
 import { Spin } from 'antd';
 
+import { i18nTranslate } from '@i18n';
+
 import { LoadingContainer } from './styles';
 
 export default function Loading() {
@@ -18,7 +20,11 @@ export default function Loading() {
 
 	return (
 		<LoadingContainer viewMode={page.viewMode}>
-			<Spin tip="加载中..." size="large" className="spinner" />
+			<Spin
+				tip={i18nTranslate('Loading...', page.locale)}
+				size="large"
+				className="spinner"
+			/>
 		</LoadingContainer>
 	);
 }
