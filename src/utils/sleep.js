@@ -1,11 +1,16 @@
 /**
- * JS 版本睡眠函数, 参考 Python的 time.sleep()
- * 
- * 此处只是一个案例, 根据实际的项目需求自行修改
- * 有更好的意见可以提 issue, pr
- * Github地址: https://github.com/YernarT/quick-start-for-react
+ * 睡眠函数, 参考 Python的 time.sleep()
+ *
+ * 欢迎大佬的 issue, pr
+ * Github地址: https://github.com/YernarT/react_architecture
  */
 
+/**
+ * 
+ * @param { Number } ms 毫秒
+ * 
+ * @returns { Promise } ms毫秒后 返回一个成功的 Promise, value为ms
+ */
 export default async function sleep(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }

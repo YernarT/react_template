@@ -1,10 +1,10 @@
 /**
- * 导出所有工具函数, 方便使用
+ * 工具函数
  *
- * 此处只是一个案例, 根据实际的项目需求自行修改
- * 有更好的意见可以提 issue, pr
- * Github地址: https://github.com/YernarT/quick-start-for-react
+ * 欢迎大佬的 issue, pr
+ * Github地址: https://github.com/YernarT/react_architecture
  */
+
 export { default as localStorage } from 'store';
 
 export { default as number2Text } from '@utils/number2Text';
