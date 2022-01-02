@@ -1,19 +1,20 @@
 /**
  * 根据 locale字符串 返回对应的 antd库 中的 local对象
- * 此项目假设有多语言需求, local字符串存在 recoil, localStorage中, 默认英语
+ * 将local字符串同时存在 recoil, localStorage中, 默认英语
+ * 存在 localStorage 保证下次打开页面还是之前的语言
+ * 存在 recoil 可实时刷新页面语言
  *
- * 此处只是一个案例, 根据实际的项目需求自行修改
- * 有更好的意见可以提 issue, pr
- * Github地址: https://github.com/YernarT/quick-start-for-react
+ * 欢迎大佬的 issue, pr
+ * Github地址: https://github.com/YernarT/react_architecture
  */
 
-import { useMemo } from 'react';
+import { useCreation } from 'ahooks';
 
 import en_US from 'antd/lib/locale/en_US';
 import zh_CN from 'antd/lib/locale/zh_CN';
 
 export default function useAntdLocale(locale) {
-	const antdLocale = useMemo(() => {
+	const antdLocale = useCreation(() => {
 		switch (locale) {
 			case 'en-US':
 				return en_US;
