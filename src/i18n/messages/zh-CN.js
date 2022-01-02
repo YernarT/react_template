@@ -1,12 +1,10 @@
 /**
- * i18n 相关代码并不稳定
- * 后续版本会出现 breaking change
- * 欢迎各路大神参与开发
+ * 翻译-中文
  *
- * 此处只是一个案例, 根据实际的项目需求自行修改
- * 有更好的意见可以提 issue, pr
- * Github地址: https://github.com/YernarT/quick-start-for-react
+ * 欢迎大佬的 issue, pr
+ * Github地址: https://github.com/YernarT/react_architecture
  */
+
 import i18nLocales from '@i18n/locales';
 
 const i18nCHINESE = {
