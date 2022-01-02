@@ -1,10 +1,8 @@
 /**
- * recoil库 所使用的 atom
- * 统一导出, 方便使用
+ * recoil atoms
  *
- * 此处只是一个案例, 根据实际的项目需求自行修改
- * 有更好的意见可以提 issue, pr
- * Github地址: https://github.com/YernarT/quick-start-for-react
+ * 欢迎大佬的 issue, pr
+ * Github地址: https://github.com/YernarT/react_architecture
  */
 
 export { userAtom } from '@recoil/user-atom';
