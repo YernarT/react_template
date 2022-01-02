@@ -4,14 +4,14 @@
 		"paths": {
 			"@api/*": ["src/api/*"],
 			"@assets/*": ["src/assets/*"],
-			"@config/*": ["src/config/*"],
 			"@components/*": ["src/components/*"],
+			"@config/*": ["src/config/*"],
+			"@data/*": ["src/data/*"],
+			"@hooks/*": ["src/hooks/*"],
+			"@i18n/*": ["src/i18n/*"],
 			"@pages/*": ["src/pages/*"],
 			"@recoil/*": ["src/recoil/*"],
-			"@utils/*": ["src/utils/*"],
-			"@hooks/*": ["src/hooks/*"],
-			"@data/*": ["src/data/*"],
-			"@i18n/*": ["src/i18n/*"]
+			"@utils/*": ["src/utils/*"]
 		},
 		"experimentalDecorators": true
 	},

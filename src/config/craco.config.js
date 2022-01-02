@@ -35,16 +35,16 @@ module.exports = {
 	// Webpack 配置
 	webpack: {
 		alias: {
-			'@api': path.resolve('src/api'),
-			'@assets': path.resolve('src/assets'),
-			'@config': path.resolve('src/config'),
-			'@components': path.resolve('src/components'),
-			'@pages': path.resolve('src/pages'),
-			'@recoil': path.resolve('src/recoil'),
-			'@utils': path.resolve('src/utils'),
-			'@data': path.resolve('src/data'),
-			'@hooks': path.resolve('src/hooks'),
-			'@i18n': path.resolve('src/i18n'),
+			"@api/*": ["src/api/*"],
+			"@assets/*": ["src/assets/*"],
+			"@components/*": ["src/components/*"],
+			"@config/*": ["src/config/*"],
+			"@data/*": ["src/data/*"],
+			"@hooks/*": ["src/hooks/*"],
+			"@i18n/*": ["src/i18n/*"],
+			"@pages/*": ["src/pages/*"],
+			"@recoil/*": ["src/recoil/*"],
+			"@utils/*": ["src/utils/*"]
 		},
 		configure: webpackConfig => {
 			// console.log(webpackConfig);
