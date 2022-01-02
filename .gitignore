@@ -66,7 +66,3 @@ jspm_packages
 
 # yarn integrity file
 .yarn-integrity
-
-# custom ignore
-package-lock.json
-yarn.lock
