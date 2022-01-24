@@ -1,32 +1,46 @@
-# Quick start for React
+# React Template &middot; V5.0.0
 
-**Quick start for React** 是 [IT IS IT]()工作室 出品的 React 项目的 架构标准。
+> 此模板为**企业级**项目中使用的 `React` 架构方案。
 
-**全面性:** 提供了更多在实际项目中使用的架构, 减少重复工作, 快速启动项目。
+**全面性:** 提供在实际项目中使用的架构, 减少重复工作, 快速启动项目。
 
-**可扩展:** 它并不是一个固定的架构, 可以根据项目的实际需要减少或增加。
+**灵活性:** 此模板可以根据项目的实际需要, 剔除或扩展内容。
 
-**被维护:** 该架构被[我们]()很多真实的项目所使用, 架构会每隔一段时间更新一次, 社区提出的问题也会被注意到和解决。
+**被维护:** 此模板已投入生产项目所使用, 架构会每隔一段时间更新一次, 社区提出的 issue 和 pr 也会被注意和解决。
 
 ---
 
-## 安装
+## 安装 & 使用
 
-- 从 [github 仓库](https://github.com/YernarT/quick-start-for-react)。
+1. 从 [github 仓库](https://github.com/YernarT/react_template) `clone` 或 `use`。
+
+2. 安装依赖: `npm i` 或 `yarn`
+
+3. 删除 .git 文件, git 文件夹, 执行 `git init`
+
+4. happy hacking :)
 
 ## 简约文档
 
-Quick start for React 从一开始就被设计为同时开发多个项目不同难度的项目, `React.js` 是 [IT IS IT]()工作室的前端技术栈之一。
+此模板从一开始就被设计为同时开发多个的项目
 
-您可以通过向 [此存储库](https://github.com/YernarT/quick-start-for-react) 发 pr 来改进它。
+相同的架构方案, 代码规范减少开发者心智负担
 
-架构按照项目难度不同, 被分为 3 种类型
+同时 `React.js` 也是 [IT IS IT]()工作室的前端技术栈之一。
 
-- mini
-- simple
-- comprehensive
+可以通过向 [此存储库](https://github.com/YernarT/react_template) 发 pr 来改进它。
 
-在此项目仓库的不同分支有具体的实现.
+## 技术栈
+
+- **语言:** `TypeScript`
+- **构建工具:** `Vite2`
+- **UI 组件:** `Material Design`
+- **网络请求:** `Axios`
+- **状态管理:** `Recoil`
+- **样式编辑:** `Styled-Components`
+- **Hooks:** `ahooks`
+- **国际化:** `i18n`
+- **模拟数据:** `json-server`
 
 ## 未来计划
 
@@ -36,17 +50,17 @@ Quick start for React 从一开始就被设计为同时开发多个项目不同�
 
 **长久**
 
-- 添加 单元测试
+- 添加 _Unit Test_ 测试
 - 升级 _React18_ 版本
-- 修复 _craco eslint loader_ 找不到的警告
-- 添加 _TypeScript_ 重构版本
+- 修复 _TypeScript_ 类型
+- 完善 _CRACO_ 配置
 
 ## 维护 & 赞助
 
-| Github  |  身份  |               贡献               |
-| :-----: | :----: | :------------------------------: |
-| YernarT | 创建者 | 发布 mini, simple, comprehensive |
+| Github  |  身份  | 贡献 & 赞助 |
+| :-----: | :----: | :---------: |
+| YernarT | 维护者 |     1$      |
 
 ### License
 
-Quick start for React 是 [MIT 许可](./LICENSE)。
+此模板是 [MIT 许可](./LICENSE)。
