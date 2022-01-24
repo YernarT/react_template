@@ -2,7 +2,7 @@
  * 检测设备的朝向, 仅在移动设备上生效
  *
  * 欢迎大佬的 issue, pr
- * Github地址: https://github.com/YernarT/react_architecture
+ * Github地址: https://github.com/YernarT/react_template
  */
 
 import { useEventListener, useSafeState } from 'ahooks';

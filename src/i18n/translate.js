@@ -2,7 +2,7 @@
  * 翻译函数
  *
  * 欢迎大佬的 issue, pr
- * Github地址: https://github.com/YernarT/react_architecture
+ * Github地址: https://github.com/YernarT/react_template
  */
 
 import i18nLanguages from '@i18n/messages';

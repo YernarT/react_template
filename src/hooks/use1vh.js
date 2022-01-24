@@ -2,7 +2,7 @@
  * 解决移动端100vh显示异常的问题 (浏览器菜单遮挡等..)
  *
  * 欢迎大佬的 issue, pr
- * Github地址: https://github.com/YernarT/react_architecture
+ * Github地址: https://github.com/YernarT/react_template
  */
 
 import { useSafeState, useEventListener } from 'ahooks';

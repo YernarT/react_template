@@ -22,6 +22,11 @@ export default function RouteWithConfig({ config, role }) {
 		[pathname, config],
 	);
 
+	// 解决React app切换路径时, 滚动条不被维护的bug
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	//  路由已注册
 	if (targetConfig) {
 		// 根据配置对象返回对应路由的组件

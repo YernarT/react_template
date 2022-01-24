@@ -3,7 +3,7 @@
  * 大多数 实用的 hook 都能在 ahooks 中找到
  *
  * 欢迎大佬的 issue, pr
- * Github地址: https://github.com/YernarT/react_architecture
+ * Github地址: https://github.com/YernarT/react_template
  */
 
 export { default as useAntdLocale } from '@hooks/useAntdLocale';

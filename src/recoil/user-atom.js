@@ -2,7 +2,7 @@
  * 用户数据相关 全局状态
  *
  * 欢迎大佬的 issue, pr
- * Github地址: https://github.com/YernarT/react_architecture
+ * Github地址: https://github.com/YernarT/react_template
  */
 
 import { atom } from 'recoil';

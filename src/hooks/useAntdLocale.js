@@ -5,7 +5,7 @@
  * 存在 recoil 可实时刷新页面语言
  *
  * 欢迎大佬的 issue, pr
- * Github地址: https://github.com/YernarT/react_architecture
+ * Github地址: https://github.com/YernarT/react_template
  */
 
 import { useCreation } from 'ahooks';

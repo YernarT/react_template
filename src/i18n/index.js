@@ -3,7 +3,7 @@
  * 后续更新可能会有 breaking change
  *
  * 欢迎大佬的 issue, pr
- * Github地址: https://github.com/YernarT/react_architecture
+ * Github地址: https://github.com/YernarT/react_template
  */
 
 export { default as i18nLocales } from '@i18n/locales';

@@ -2,7 +2,7 @@
  * 测试版 工具函数
  *
  * 欢迎大佬的 issue, pr
- * Github地址: https://github.com/YernarT/react_architecture
+ * Github地址: https://github.com/YernarT/react_template
  */
 
 const MIN = 60e3;

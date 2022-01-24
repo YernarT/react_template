@@ -2,6 +2,9 @@
 
 > comprehensive 版本是**企业级**项目中使用的 React 架构方案 的标准。
 
+目标: 一个简单, 易用的 React 项目模板
+学会 Webpack
+
 ---
 
 ## Get started

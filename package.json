@@ -1,7 +1,7 @@
 {
 	"name": "comprehensive",
-	"version": "4.0.0",
-	"private": true,
+	"version": "5.0.0",
+	"private": false,
 	"description": "Quick start for react application comprehensive version.",
 	"keywords": [
 		"react",
@@ -14,11 +14,11 @@
 		"url": "https://github.com/YernarT"
 	},
 	"bugs": {
-		"url": "https://github.com/YernarT/react-quick-start/issues"
+		"url": "https://github.com/YernarT/react_template/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/YernarT/react-quick-start"
+		"url": "https://github.com/YernarT/react_template"
 	},
 	"license": "MIT",
 	"dependencies": {
