@@ -14,7 +14,7 @@
 
 1. 从 [github 仓库](https://github.com/YernarT/react_template) `clone` 或 `use`。
 
-2. 安装依赖: `npm i` 或 `yarn`
+2. 安装依赖: `pnpm install`
 
 3. 删除 .git 文件, git 文件夹, 执行 `git init`
 
@@ -59,16 +59,20 @@
 
 ## 技术栈
 
-- **语言:** `TypeScript`
-- **构建工具:** `Vite`
-- **包管理工具:** `Yarn`
+- **Node:** `Node.js 16.13.0`
+- **React:** `React ^17.0.2`
+- **编写语言:** `TypeScript ^4.4.4`
+- **构建工具:** `Vite ^2.7.2`
+- **包管理工具:** `Pnpm 6.28.0`
 - **UI 组件:** `Material Design`
 - **网络请求:** `Axios`
 - **状态管理:** `Recoil`
 - **样式编辑:** `Styled-Components`
 - **Hooks:** `ahooks`
 - **国际化:** `i18n`
-- **模拟数据:** `json-server`
+- **格式化:** `prettier ^2.5.1`
+- **语法检查:** `eslint ^8.7.0`
+- **模拟数据:** `json-server ^0.17.0`
 
 ## 未来计划
 
@@ -80,14 +84,13 @@
 
 - 添加 _Unit Test_ 测试
 - 升级 _React18_ 版本
-- 使用 _Pnpm_ 工具
 - 完善 _TypeScript_ 类型
 
 ## 维护 & 赞助
 
 | Github  |  身份  | 贡献 & 赞助 |
 | :-----: | :----: | :---------: |
-| YernarT | 维护者 |    1.27$    |
+| YernarT | 维护者 |    1.33$    |
 
 ### License
 
