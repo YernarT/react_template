@@ -1,0 +1,48 @@
+{
+	"name": "react_template",
+	"version": "5.0.0",
+	"private": false,
+	"description": "This template is the React.js architecture scheme used in enterprise projects.",
+	"keywords": [
+		"react",
+		"template"
+	],
+	"author": {
+		"name": "Yernar.T",
+		"email": "toktaryernar@gmail.com",
+		"url": "https://github.com/YernarT"
+	},
+	"bugs": {
+		"url": "https://github.com/YernarT/react_template/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/YernarT/react_template"
+	},
+	"license": "MIT",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"json-server": "json-server --watch --port 9090 --delay 1000 __json_server_mock__/db.json"
+	},
+	"dependencies": {
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2"
+	},
+	"devDependencies": {
+		"@types/react": "^17.0.33",
+		"@types/react-dom": "^17.0.10",
+		"@typescript-eslint/eslint-plugin": "^5.10.1",
+		"@typescript-eslint/parser": "^5.10.1",
+		"@vitejs/plugin-react": "^1.0.7",
+		"eslint": "^8.7.0",
+		"eslint-define-config": "^1.2.3",
+		"eslint-plugin-react": "^7.28.0",
+		"eslint-plugin-react-hooks": "^4.3.0",
+		"json-server": "^0.17.0",
+		"prettier": "^2.5.1",
+		"typescript": "^4.4.4",
+		"vite": "^2.7.2"
+	}
+}
