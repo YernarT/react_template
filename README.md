@@ -57,6 +57,33 @@
 
 可以通过向 [此存储库](https://github.com/YernarT/react_template) 发 pr 来改进它。
 
+### Git 提交规范
+
+`git commit -m <type>[optional scope]: <description>`
+
+- type: 用于说明提交的改动类型, 只允许使用以下标识
+- optional scope: 可选的修改范围, 用于标识提交主要涉及到代码中哪个模块
+- description: 描述提交的主要内容, 做到言简意赅, 不超过 50 字符且不加句号
+
+type ↓
+
+- :rainbow: init: 初始化
+- :sparkles: feat (feature): 新特性, 新功能
+- :bug: fix: 修改 bug
+- :hammer: update: 更新某功能
+- :construction: wip: 正在开发中
+- :pencil2: rename: 重命名修改
+- :zap: perf (performance): 优化相关, 比如提升性能, 体验
+- :books: docs (documentation): 文档修改
+- :nail_care: style: 代码格式修改, 注意不是 css
+- :recycle: refactor: 代码重构
+- :white_check_mark: test: 更新测试
+- :rewind: revert: 回滚到上一个版本
+- :trophy: release: 新的语义化版本
+- :vertical_traffic_light: ci: 持续集成修改
+- :wrench: chore: 其他修改, 如: 对项目构建或者依赖的改动
+- :octocat: mod: 不确定的分类修改
+
 ## 技术栈
 
 - **Node:** `Node.js 16.13.0`
@@ -68,7 +95,7 @@
 - **网络请求:** `Axios`
 - **状态管理:** `Recoil`
 - **样式编辑:** `Styled-Components`
-- **Hooks:** `ahooks`
+- **Hooks:** `ahooks ^3.1.9`
 - **国际化:** `i18n`
 - **格式化:** `prettier ^2.5.1`
 - **语法检查:** `eslint ^8.7.0`
