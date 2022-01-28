@@ -24,33 +24,6 @@
 
 此模板从一开始就被设计为同时开发多个的项目。多个项目使用相同的架构方案, 代码规范以减少开发者心智负担。
 
-### 方案一致性:
-
-- 统一数据流
-- 统一图标库
-- 统一请求库
-
-### 编码一致性:
-
-- 统一目录结构
-- 统一 ESM 模块规范
-- 统一 TypeScript
-
-### 规避常见错误:
-
-- 禁止混用 CJS 和 ESM
-- 禁用 eval, new Function 等
-- 禁用依赖声明使用 \*
-- 禁止使用未定义的变量
-
-### 提升可维护性
-
-- 禁止跨 group 或 page 引用
-- 组件限 600 行
-- 禁止流程语句嵌套三层以上
-
-### 严格模式:
-
 - 全面 TypeScript, 禁用 JavaScript
 - 全面 FC, 禁用 Class Component
 - 强制 tsc 校验
@@ -65,24 +38,24 @@
 - optional scope: 可选的修改范围, 用于标识提交主要涉及到代码中哪个模块
 - description: 描述提交的主要内容, 做到言简意赅, 不超过 50 字符且不加句号
 
-type ↓
-
-- :rainbow: init: 初始化
-- :sparkles: feat (feature): 新特性, 新功能
-- :bug: fix: 修改 bug
-- :hammer: update: 更新某功能
-- :construction: wip: 正在开发中
-- :pencil2: rename: 重命名修改
-- :zap: perf (performance): 优化相关, 比如提升性能, 体验
-- :books: docs (documentation): 文档修改
-- :nail_care: style: 代码格式修改, 注意不是 css
-- :recycle: refactor: 代码重构
-- :white_check_mark: test: 更新测试
-- :rewind: revert: 回滚到上一个版本
-- :trophy: release: 新的语义化版本
-- :vertical_traffic_light: ci: 持续集成修改
-- :wrench: chore: 其他修改, 如: 对项目构建或者依赖的改动
-- :octocat: mod: 不确定的分类修改
+|   type   |         gitmoji          |      description       |
+| :------: | :----------------------: | :--------------------: |
+|   init   |        :rainbow:         |         初始化         |
+|   feat   |        :sparkles:        |     新特性, 新功能     |
+|   fix    |          :bug:           |        修复错误        |
+|  update  |         :hammer:         |       更新某功能       |
+|   wip    |      :construction:      |       正在开发中       |
+|  rename  |        :pencil2:         |       重命名修改       |
+|   perf   |          :zap:           |  优化相关(性能, 体验)  |
+|   docs   |         :books:          |        文档修改        |
+|  style   |       :nail_care:        |      代码格式修改      |
+| refactor |        :recycle:         |        代码重构        |
+|   test   |    :white_check_mark:    |        更新测试        |
+|  revert  |         :rewind:         |    回滚到上一个版本    |
+| release  |         :trophy:         |     新的语义化版本     |
+|    ci    | :vertical_traffic_light: |      持续集成修改      |
+|  chore   |         :wrench:         | 项目构建或者依赖的改动 |
+|   mod    |        :octocat:         |    不确定的分类修改    |
 
 ## 技术栈
 
