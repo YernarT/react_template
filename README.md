@@ -59,15 +59,15 @@
 
 ## 技术栈
 
-- **Node:** `Node.js 16.13.0`
-- **React:** `React ^17.0.2`
-- **编写语言:** `TypeScript ^4.4.4`
-- **构建工具:** `Vite ^2.7.2`
-- **包管理工具:** `Pnpm 6.28.0`
-- **UI 组件:** `Material Design`
-- **网络请求:** `Axios`
-- **状态管理:** `Recoil`
-- **样式编辑:** `Styled-Components`
+- **Node:** `node.js 16.13.0`
+- **React:** `react ^17.0.2`
+- **编写语言:** `typeScript ^4.4.4`
+- **构建工具:** `vite ^2.7.2`
+- **包管理工具:** `pnpm 6.28.0`
+- **UI 组件:** `material Design`
+- **网络请求:** `axios`
+- **状态管理:** `recoil`
+- **样式编辑:** `styled-Components`
 - **Hooks:** `ahooks ^3.1.9`
 - **国际化:** `i18n`
 - **格式化:** `prettier ^2.5.1`
