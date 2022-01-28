@@ -1,15 +1,12 @@
-import { useState } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { RouteGuard } from '@/components/common';
+import routes from '@/routes/index';
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
-		<div className="App">
-			<p>当前和: {count}</p>
-			<button type="button" onClick={() => setCount(count => count + 1)}>
-				点我加一
-			</button>
-		</div>
+		<BrowserRouter>
+			<RouteGuard routes={routes} />
+		</BrowserRouter>
 	);
 }
 
