@@ -1,8 +1,8 @@
-import type { FC } from 'react';
+import type { ReactElement } from 'react';
 
 export interface RouteProps {
 	path: string;
-	component: FC;
+	component: ReactElement;
 	auth: boolean;
 	role: Array<string>;
 }
