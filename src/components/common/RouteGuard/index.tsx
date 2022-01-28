@@ -1,6 +1,6 @@
 import type { RouteProps } from '#/routes';
 
-import { memo, Suspense } from 'react';
+import { memo } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 interface RouteGuardProps {
@@ -14,21 +14,13 @@ export default memo(function RouteGuard({ routes }: RouteGuardProps) {
 		routeConfig => routeConfig.path === pathname,
 	);
 
-	if (targetConfig) {
-		return (
-			<Suspense fallback={<div>Loading...</div>}>
-				<Routes>
-					<Route path={targetConfig.path} element={targetConfig.component} />
-				</Routes>
-			</Suspense>
-		);
-	}
+	console.log(targetConfig);
 
-	return (
-		<Suspense fallback={<div>Loading...</div>}>
-			<Routes>
-				<Route path="*" element={<Navigate replace to="/404" />} />
-			</Routes>
-		</Suspense>
-	);
+	<Routes>
+		{targetConfig ? (
+			<Route path={targetConfig.path} element={targetConfig.component} />
+		) : (
+			<Route path="*" element={<Navigate replace to="/404" />} />
+		)}
+	</Routes>;
 });
