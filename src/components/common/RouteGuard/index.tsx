@@ -1,26 +1,26 @@
 import type { RouteProps } from '#/routes';
 
-import { memo } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { memo, Suspense } from 'react';
+import { Route, Redirect, useLocation } from 'react-router-dom';
 
 interface RouteGuardProps {
 	routes: Array<RouteProps>;
 }
 
 export default memo(function RouteGuard({ routes }: RouteGuardProps) {
-	const { pathname } = location;
+	const { pathname } = useLocation();
 
 	const targetConfig = routes.find(
 		routeConfig => routeConfig.path === pathname,
 	);
 
-	console.log(targetConfig);
+	if (targetConfig) {
+		return (
+			<Suspense fallback={targetConfig.fallback}>
+				<Route path={targetConfig.path} component={targetConfig.component} />;
+			</Suspense>
+		);
+	}
 
-	<Routes>
-		{targetConfig ? (
-			<Route path={targetConfig.path} element={targetConfig.component} />
-		) : (
-			<Route path="*" element={<Navigate replace to="/404" />} />
-		)}
-	</Routes>;
+	return <Redirect to="/404" />;
 });
