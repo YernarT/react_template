@@ -1,12 +1,18 @@
+<div align="center">
+    <img width="200" height="200" 
+    alt="React Template" 
+    src="src/assets/image/favicon.svg" />
+    <br /><br />
+
+[![license](https://img.shields.io/badge/React-17.0.2-blue?logo=React)](LICENSE)
+[![license](https://img.shields.io/badge/Vite-2.7.2-blueviolet?logo=Vite)](LICENSE)
+[![license](https://img.shields.io/badge/TypeScript-4.4.4-blue?logo=TypeScript)](LICENSE)
+
 # React Template &middot; V5.0.0
 
-> 此模板为**企业级**项目中使用的 `React` 架构方案。
+</div>
 
-**全面性:** 提供在实际项目中使用的架构, 减少重复工作, 快速启动项目。
-
-**灵活性:** 此模板可以根据项目的实际需要, 剔除或扩展内容。
-
-**被维护:** 此模板已投入生产项目所使用, 架构会每隔一段时间更新一次, 社区提出的 issue 和 pr 也会被注意和解决。
+> 此模板是 [我](https://github.com/YernarT) 在前端项目中使用的 `React` 架构方案。
 
 ---
 
@@ -22,15 +28,19 @@
 
 ## 简约文档
 
-此模板从一开始就被设计为同时开发多个的项目。多个项目使用相同的架构方案, 代码规范以减少开发者心智负担。
+此模板的设计初心是为同时开发多个的项目。多个项目使用相同的架构方案, 代码规范以减少开发者心智负担。
 
-- 全面 TypeScript, 禁用 JavaScript
-- 全面 FC, 禁用 Class Component
-- 强制 tsc 校验
+一些特点:
+
+- 全面 `TypeScript`, 禁用 `JavaScript`
+- 全面 `FC`, 禁用 `Class Component`
+- 强制 `tsc` 校验
 
 可以通过向 [此存储库](https://github.com/YernarT/react_template) 发 pr 来改进它。
 
-### Git 提交规范
+---
+
+## Git 提交规范
 
 `git commit -m <type>[optional scope]: <description>`
 
@@ -57,6 +67,38 @@
 |  chore   |         :wrench:         | 项目构建或者依赖的改动 |
 |   mod    |        :octocat:         |    不确定的分类修改    |
 
+---
+
+## ⛔️ Import 引入规则
+
+> 遵守引入规范, 保持代码的可读性高
+
+```typescript
+// 引入类型统一提权到最高
+// ⚠️ 引入类型使用import type
+import type { Plugin } from 'vite'
+import type { ReactElement } from 'react';
+
+// 框架相关
+import React from "react";
+import { Link } from "react-router-dom":
+
+// 样式区
+import "xxx.less || xxx.css ....";
+import cssStyle from "xxx.module.less";
+// 静态文件区
+import LoginBGImage from  "/@/assets/images/login_bg.png"
+// 方法区
+import { isFunction } from '/@/utils/is'
+import { useScrollControl } from '/@/hooks/useScrollControl'
+
+// 组件区域
+import { Button } from "Antd";
+import LoginPage from "@/pages/Login"
+```
+
+---
+
 ## 技术栈
 
 - **Node:** `node.js 16.13.0`
@@ -74,6 +116,8 @@
 - **语法检查:** `eslint ^8.7.0`
 - **模拟数据:** `json-server ^0.17.0`
 
+---
+
 ## 未来计划
 
 **短期**
@@ -87,12 +131,28 @@
 - 升级 _React18_ 版本
 - 完善 _TypeScript_ 类型
 
+---
+
+## 🟢 浏览器支持
+
+支持所有现代浏览器
+
+推荐本地开发浏览器: `Chrome 80 +`
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt=" Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt=" Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                                             not support                                                                                              |                                                                                            last 2 versions                                                                                             |                                                                                                  last 2 versions                                                                                                  |                                                                                                last 2 versions                                                                                                |                                                                                                last 2 versions                                                                                                |
+
+---
+
 ## 维护 & 赞助
 
 | Github  |  身份  | 贡献 & 赞助 |
 | :-----: | :----: | :---------: |
-| YernarT | 维护者 |    1.46$    |
+| YernarT | 维护者 |    2.14$    |
 
-### License
+---
+
+## License
 
 此模板是 [MIT 许可](./LICENSE)。
