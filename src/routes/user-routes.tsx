@@ -1,19 +1,15 @@
 import type { RouteProps } from '#/routes';
 
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
 import { Role } from '@/utils';
 
 const userRoutes: Array<RouteProps> = [
 	{
 		path: '/',
-		component: (
-			<Suspense fallback={<div>Home Loading...</div>}>
-				{lazy(
-					() =>
-						import(/* webpackChunkName: "HomePage" */ '@/pages/user/HomePage'),
-				)}
-			</Suspense>
+		component: lazy(
+			() => import(/* webpackChunkName: "HomePage" */ '@/pages/user/HomePage'),
 		),
+		fallback: <div>Home Loading...</div>,
 		auth: true,
 		role: [Role.user, Role.admin],
 	},

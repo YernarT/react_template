@@ -1,21 +1,18 @@
 import type { RouteProps } from '#/routes';
 
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
 import { Role } from '@/utils';
 
 const commonRoutes: Array<RouteProps> = [
 	{
 		path: '/404',
-		component: (
-			<Suspense fallback={<div>404 Loading...</div>}>
-				{lazy(
-					() =>
-						import(
-							/* webpackChunkName: "PageNotFoundPage" */ '@/pages/common/PageNotFoundPage'
-						),
-				)}
-			</Suspense>
+		component: lazy(
+			() =>
+				import(
+					/* webpackChunkName: "PageNotFoundPage" */ '@/pages/common/PageNotFoundPage'
+				),
 		),
+		fallback: <div>404 Loading...</div>,
 		auth: false,
 		role: Role.all(),
 	},
