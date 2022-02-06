@@ -1,8 +1,9 @@
-import type { ReactElement } from 'react';
+import type { LazyExoticComponent } from 'react';
 
 export interface RouteProps {
 	path: string;
-	component: ReactElement;
+	component: LazyExoticComponent<() => JSX.Element>;
+	fallback: JSX.Element;
 	auth: boolean;
 	role: Array<string>;
 }
