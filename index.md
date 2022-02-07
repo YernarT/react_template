@@ -1,16 +1,4 @@
-<div align="center">
-    <img width="200" height="200" 
-    alt="React Template" 
-    src="/logo.svg" />
-    <br /><br />
-
-[![license](https://img.shields.io/badge/React-17.0.2-blue?logo=React)](LICENSE)
-[![license](https://img.shields.io/badge/Vite-2.7.2-blueviolet?logo=Vite)](LICENSE)
-[![license](https://img.shields.io/badge/TypeScript-4.4.4-blue?logo=TypeScript)](LICENSE)
-
 # React Template &middot; V5.0.0
-
-</div>
 
 > 此模板是 [我](https://github.com/YernarT) 在前端项目中使用的 `React` 架构方案。
 
