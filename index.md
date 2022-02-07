@@ -1,7 +1,7 @@
 <div align="center">
     <img width="200" height="200" 
     alt="React Template" 
-    src="src/assets/image/favicon.svg" />
+    src="/logo.svg" />
     <br /><br />
 
 [![license](https://img.shields.io/badge/React-17.0.2-blue?logo=React)](LICENSE)
