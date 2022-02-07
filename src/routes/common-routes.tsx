@@ -3,7 +3,7 @@ import type { RouteProps } from '#/routes';
 import { lazy } from 'react';
 import { Role } from '@/utils';
 
-const commonRoutes: Array<RouteProps> = [
+const commonRoutes: RouteProps[] = [
 	{
 		path: '/404',
 		component: lazy(
