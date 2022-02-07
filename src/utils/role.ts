@@ -9,7 +9,7 @@ const Role: RoleProps = {
 	guest: 'guest',
 	user: 'user',
 	admin: 'admin',
-	all(): Array<string> {
+	all(): string[] {
 		return [this.guest, this.user, this.admin];
 	},
 };

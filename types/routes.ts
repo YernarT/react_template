@@ -5,5 +5,5 @@ export interface RouteProps {
 	component: LazyExoticComponent<() => JSX.Element>;
 	fallback: JSX.Element;
 	auth: boolean;
-	role: Array<string>;
+	role: string[];
 }

@@ -4,7 +4,7 @@ import { memo, Suspense } from 'react';
 import { Route, Redirect, useLocation } from 'react-router-dom';
 
 interface RouteGuardProps {
-	routes: Array<RouteProps>;
+	routes: RouteProps[];
 }
 
 export default memo(function RouteGuard({ routes }: RouteGuardProps) {
