@@ -27,6 +27,10 @@
 		"json-server": "json-server --watch --port 9090 --delay 1000 __json_server_mock__/db.json"
 	},
 	"dependencies": {
+		"@emotion/react": "^11.7.1",
+		"@emotion/styled": "^11.6.0",
+		"@mui/icons-material": "^5.4.1",
+		"@mui/material": "^5.4.1",
 		"ahooks": "^3.1.9",
 		"axios": "^0.25.0",
 		"react": "^17.0.2",
