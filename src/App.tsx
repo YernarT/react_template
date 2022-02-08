@@ -1,12 +1,16 @@
 import { BrowserRouter } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
+
 import { RouteGuard } from '@/components/common';
-import routes from '@/routes/index';
+import routes from '@/routes';
 
 function App() {
 	return (
-		<BrowserRouter>
-			<RouteGuard routes={routes} />
-		</BrowserRouter>
+		<RecoilRoot>
+			<BrowserRouter>
+				<RouteGuard routes={routes} />
+			</BrowserRouter>
+		</RecoilRoot>
 	);
 }
 
