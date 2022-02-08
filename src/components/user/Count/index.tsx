@@ -1,3 +1,5 @@
+import { Button } from '@mui/material';
+
 import { useCounter } from 'ahooks';
 
 export default function Count() {
@@ -11,30 +13,32 @@ export default function Count() {
 			<p>count: {current} [max: 10; min: -4;]</p>
 
 			<div>
-				<button
-					type="button"
-					onClick={() => {
-						inc();
-					}}>
+				<Button type="button" variant="contained">
 					inc()
-				</button>
-				<button
+				</Button>
+				<Button
 					type="button"
+					variant="contained"
 					onClick={() => {
 						dec();
 					}}>
 					dec()
-				</button>
-				<button
+				</Button>
+				<Button
 					type="button"
+					variant="contained"
 					onClick={() => {
 						set(3);
 					}}>
 					set(3)
-				</button>
-				<button type="button" onClick={reset}>
+				</Button>
+				<Button
+					type="button"
+					onClick={() => {
+						reset();
+					}}>
 					reset()
-				</button>
+				</Button>
 			</div>
 		</div>
 	);
