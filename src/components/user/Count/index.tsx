@@ -13,30 +13,16 @@ export default function Count() {
 			<p>count: {current} [max: 10; min: -4;]</p>
 
 			<div>
-				<Button type="button" variant="contained">
+				<Button type="button" variant="contained" onClick={() => inc()}>
 					inc()
 				</Button>
-				<Button
-					type="button"
-					variant="contained"
-					onClick={() => {
-						dec();
-					}}>
+				<Button type="button" variant="contained" onClick={() => dec()}>
 					dec()
 				</Button>
-				<Button
-					type="button"
-					variant="contained"
-					onClick={() => {
-						set(3);
-					}}>
+				<Button type="button" variant="contained" onClick={() => set(3)}>
 					set(3)
 				</Button>
-				<Button
-					type="button"
-					onClick={() => {
-						reset();
-					}}>
+				<Button type="button" variant="contained" onClick={reset}>
 					reset()
 				</Button>
 			</div>
