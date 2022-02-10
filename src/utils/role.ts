@@ -1,11 +1,11 @@
-interface RoleProps {
+export interface RoleProperties {
 	guest: string;
 	user: string;
 	admin: string;
 	all: Function;
 }
 
-const Role: RoleProps = {
+export const Role: RoleProperties = {
 	guest: 'guest',
 	user: 'user',
 	admin: 'admin',
@@ -13,5 +13,3 @@ const Role: RoleProps = {
 		return [this.guest, this.user, this.admin];
 	},
 };
-
-export default Role;
