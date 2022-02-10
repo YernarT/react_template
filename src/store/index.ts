@@ -1,3 +1,3 @@
-export { userAtom } from '@recoil/user-atom';
+export { userAtom } from './user-atom';
 
-export { pageAtom } from '@recoil/page-atom';
+export { pageAtom } from './page-atom';
