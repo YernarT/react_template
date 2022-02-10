@@ -6,7 +6,7 @@ export const pageAtom = atom({
 	// default value, aka initial value
 	default: localStorage.get('page', {
 		// 界面语言, 默认为哈萨克语
-		locale: 'en-US',
+		locale: 'kkKZ',
 		// 获取用户设备的显示模式, 默认为暗黑模式
 		viewMode:
 			window.matchMedia &&
