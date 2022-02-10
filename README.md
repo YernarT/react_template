@@ -103,13 +103,13 @@ import LoginPage from "@/pages/Login"
 
 - **Node:** `node.js 16.13.0`
 - **React:** `react ^17.0.2`
-- **编写语言:** `typeScript ^4.4.4`
+- **编写语言:** `type script ^4.4.4`
 - **构建工具:** `vite ^2.7.2`
 - **包管理工具:** `pnpm 6.28.0`
-- **UI 组件:** `material Design`
-- **网络请求:** `axios`
-- **状态管理:** `recoil`
-- **样式编辑:** `styled-Components`
+- **UI 组件:** `material design 5`
+- **网络请求:** `axios ^3.1.9`
+- **状态管理:** `recoil ^0.6.1`
+- **样式编辑:** `emotion ^11.7.1`
 - **Hooks:** `ahooks ^3.1.9`
 - **国际化:** `i18n`
 - **格式化:** `prettier ^2.5.1`
