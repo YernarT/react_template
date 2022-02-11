@@ -1,7 +1,7 @@
 import type { isObject } from '#/common';
 
 export interface localStorageProperties {
-	get(key: string, defaultValue: isObject): isObject;
+	get(key: string, defaultValue?: isObject): isObject;
 	set(key: string, value: isObject): void;
 }
 
