@@ -7,7 +7,7 @@ import type { isObject } from '#/common';
 export default function getLatestState<T extends isObject>(
 	dataToBeDetected: T,
 	defaultCorrectData: T,
-): [boolean, T] {
+): [isValid: boolean, state: T] {
 	let fromStorageKeys = Object.keys(dataToBeDetected);
 	let defaultKeys = Object.keys(defaultCorrectData);
 
