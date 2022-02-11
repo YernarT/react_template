@@ -1,8 +1,10 @@
-import { Button } from '@mui/material';
+import { memo } from 'react';
+
+import { Button, Box } from '@mui/material';
 
 import { useCounter } from 'ahooks';
 
-export default function Count() {
+export default memo(function Count() {
 	const [current, { inc, dec, set, reset }] = useCounter(0, {
 		min: -4,
 		max: 10,
@@ -12,7 +14,7 @@ export default function Count() {
 		<div>
 			<p>count: {current} [max: 10; min: -4;]</p>
 
-			<div>
+			<Box sx={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
 				<Button type="button" variant="contained" onClick={() => inc()}>
 					inc()
 				</Button>
@@ -25,7 +27,7 @@ export default function Count() {
 				<Button type="button" variant="contained" onClick={reset}>
 					reset()
 				</Button>
-			</div>
+			</Box>
 		</div>
 	);
-}
+});
