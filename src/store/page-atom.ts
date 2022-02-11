@@ -8,7 +8,7 @@ export interface pageStateProperties {
 
 export const defaultPageState: pageStateProperties = {
 	// 界面语言, 默认为哈萨克语
-	locale: 'kkKZ',
+	locale: 'kzKZ',
 	// 获取用户设备的显示模式, 默认为暗黑模式
 	viewMode:
 		window.matchMedia &&
