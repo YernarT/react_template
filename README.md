@@ -111,7 +111,7 @@ import LoginPage from "@/pages/Login"
 - **状态管理:** `recoil ^0.6.1`
 - **样式编辑:** `emotion ^11.7.1`
 - **Hooks:** `ahooks ^3.1.9`
-- **国际化:** `i18n`
+- **国际化:** `i18next ^21.6.11`
 - **格式化:** `prettier ^2.5.1`
 - **语法检查:** `eslint ^8.7.0`
 - **模拟数据:** `json-server ^0.17.0`
