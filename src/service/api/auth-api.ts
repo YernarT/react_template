@@ -1,4 +1,4 @@
-import { apiServerInstance } from './ajax';
+import { apiServerInstance } from '../ajax';
 
 export interface AuthData {
 	phone: string;
