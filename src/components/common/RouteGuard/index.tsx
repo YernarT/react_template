@@ -15,6 +15,10 @@ export default memo(function RouteGuard({ routes }: RouteGuardProps) {
 	);
 
 	if (targetConfig) {
+		if (targetConfig.auth && targetConfig.role) {
+			// some logic
+		}
+
 		return (
 			<Suspense fallback={targetConfig.fallback}>
 				<Route path={targetConfig.path} component={targetConfig.component} />;
