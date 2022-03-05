@@ -1,33 +1,38 @@
 /**
- * 根据自定义的 locale字符串返回 (pageAtom储存的 locale属性)
- * meterial design 用到的 locale对象
- * date-fns 用到的 locale对象
+ * Return locale object based on a custom locale string
+ *
+ * Custom locale string stored in `pageAtom`, `localStorage`
+ * locale object:
+ *   1. used by material design
+ *   2. used by date-fns lib
+ *
  */
+import type { allowedLocale } from '#/locale';
 
 import { kzKZ, enUS, zhCN } from '@mui/material/locale';
-import { kk, enUS as dateEnUS, zhCN as dateZhCN } from 'date-fns/locale';
+import {
+	kk as datekkKZ,
+	enUS as dateEnUS,
+	zhCN as dateZhCN,
+} from 'date-fns/locale';
 
-export default function getLocale(locale: 'kkKZ' | 'enUS' | 'zhCN') {
+export default function getLocale(locale: allowedLocale) {
 	switch (locale) {
 		case 'kkKZ':
 			return {
 				uiLocale: kzKZ,
-				dateLocale: kk,
-			};
-		case 'enUS':
-			return {
-				uiLocale: enUS,
-				dateLocale: dateEnUS,
+				dateLocale: datekkKZ,
 			};
 		case 'zhCN':
 			return {
 				uiLocale: zhCN,
 				dateLocale: dateZhCN,
 			};
+		case 'enUS':
 		default:
 			return {
-				uiLocale: kzKZ,
-				dateLocale: kk,
+				uiLocale: enUS,
+				dateLocale: dateEnUS,
 			};
 	}
 }
