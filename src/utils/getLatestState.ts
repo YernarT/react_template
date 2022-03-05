@@ -2,9 +2,7 @@
  * Check the contents of localStorage are out of date or incorrect
  */
 
-import type { isObject } from '#/common';
-
-export default function getLatestState<T extends isObject>(
+export default function getLatestState<T extends object>(
 	dataToBeDetected: T,
 	defaultCorrectData: T,
 ): [isValid: boolean, state: T] {
