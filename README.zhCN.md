@@ -12,127 +12,127 @@
 
 </div>
 
-> [Chinese / 中文](./README.zhCN.md) <br /> The `React` architectural scheme used in front-end web projects.
+> [English / 英文](./README.md) <br />前端 Web 项目中使用的 `React` 架构方案。
 
 ---
 
-## Install & Use
+## 安装 & 使用
 
-1. From the [github repo](https://github.com/YernarT/react_template) `clone` or `use`.
+1. 从 [github 仓库](https://github.com/YernarT/react_template) `clone` 或 `use`。
 
-2. Install dependencies (recommended pnpm) `pnpm install`
+2. 安装依赖 (推荐 pnpm) `pnpm install`
 
-   Run the project `pnpm dev`
+   运行项目 `pnpm dev`
 
 3. Happy hacking :)
 
-## Minimalistic documentation
+## 简约文档
 
-The original design intention of this template is to use the same architecture scheme and code specification to reduce the mental burden of developers when developing multiple projects.
+此模板的设计初心是为开发多个的项目时, 使用相同的架构方案, 代码规范以减少开发者心智负担。
 
-**Features:**
+**特点:**
 
-- Full `TypeScript`, disable `JavaScript`
-- Full `FC`, disable `Class Component`
+- 全面 `TypeScript`, 禁用 `JavaScript`
+- 全面 `FC`, 禁用 `Class Component`
 
-It can be improved by making a pull request to [this repository](https://github.com/YernarT/react_template).
+可以通过向 [此存储库](https://github.com/YernarT/react_template) 发 Pull request 来改进它。
 
-Read about the specifications for issues and pr [here]().
+在 [这里]() 了解 issues 和 pr 的规范。
 
-## Git commit specification
+## Git 提交规范
 
 `git commit -m <type>[optional scope]: <description>`
 
-- type: used to describe the type of changes submitted, only the following flags are allowed
-- optional scope: optional modification scope, used to identify which module in the code is mainly involved in the commit
-- description: describe the main content of the submission, keep it concise, no more than 50 characters and no period
+- type: 用于说明提交的改动类型, 只允许使用以下标识
+- optional scope: 可选的修改范围, 用于标识提交主要涉及到代码中哪个模块
+- description: 描述提交的主要内容, 做到言简意赅, 不超过 50 字符且不加句号
 
-|   type   |         gitmoji          |                  description                   |
-| :------: | :----------------------: | :--------------------------------------------: |
-|   init   |        :rainbow:         |                 initialization                 |
-|   feat   |        :sparkles:        |                  new features                  |
-|   fix    |          :bug:           |                    fix bugs                    |
-|  update  |         :hammer:         |                update something                |
-|   wip    |      :construction:      |                 in development                 |
-|  rename  |        :pencil2:         |              rename modification               |
-|   perf   |          :zap:           | optimization related (performance, experience) |
-|   docs   |         :books:          |             document modification              |
-|  style   |       :nail_care:        |            code format modification            |
-| refactor |        :recycle:         |                refactoring code                |
-|   test   |    :white_check_mark:    |              test related changes              |
-|  revert  |         :rewind:         |          rollback to previous version          |
-| release  |         :trophy:         |              new semantic version              |
-|    ci    | :vertical_traffic_light: |      continuous integration modifications      |
-|  chore   |         :wrench:         |    project build or changes to dependencies    |
-|   mod    |        :octocat:         |   indeterminate classification modification    |
+|   type   |         gitmoji          |      description       |
+| :------: | :----------------------: | :--------------------: |
+|   init   |        :rainbow:         |         初始化         |
+|   feat   |        :sparkles:        |     新特性, 新功能     |
+|   fix    |          :bug:           |        修复错误        |
+|  update  |         :hammer:         |       更新某功能       |
+|   wip    |      :construction:      |       正在开发中       |
+|  rename  |        :pencil2:         |       重命名修改       |
+|   perf   |          :zap:           |  优化相关(性能, 体验)  |
+|   docs   |         :books:          |        文档修改        |
+|  style   |       :nail_care:        |      代码格式修改      |
+| refactor |        :recycle:         |        代码重构        |
+|   test   |    :white_check_mark:    |      测试相关改动      |
+|  revert  |         :rewind:         |    回滚到上一个版本    |
+| release  |         :trophy:         |     新的语义化版本     |
+|    ci    | :vertical_traffic_light: |      持续集成修改      |
+|  chore   |         :wrench:         | 项目构建或者依赖的改动 |
+|   mod    |        :octocat:         |    不确定的分类修改    |
 
 ---
 
-## ⛔️ Import specification
+## ⛔️ Import 规范
 
-> Follow the import specification to keep the code readable
+> 遵守引入规范, 保持代码的可读性高
 
 ```typescript
-// Introduce the type to be uniformly escalated to the highest
-// ⚠️ Import types use "import type"
+// 引入类型统一提权到最高
+// ⚠️ 引入类型使用import type
 import type { Plugin } from 'vite'
 import type { ReactElement } from 'react';
 
-// Framework related
+// 框架相关
 import React from "react";
 import { Link } from "react-router-dom":
 
-// Components (preferably UI library components)
+// 组件区域 (优先 UI库组件)
 import { Button, Box } from '@mui/material';
 import { RouteGuard } from "@/components"
 
-// Methods
+// 方法区
 import { useRequest } from 'ahooks'
 import { use1vh } from '@/hooks'
 import { sleep } from '@/utils'
 
-// Static files
+// 静态文件区
 import defaultUserAvatar from  "@/assets/images/default-user-avatar.png"
-// Styles
+// 样式区
 import "xxx.less || xxx.css ....";
 import cssStyle from "xxx.module.css";
 
 ```
 
-## Technology stack
+## 技术栈
 
 - **Node:** `node.js 16.13.0`
 - **React:** `react ^17.0.2`
-- **Language:** `type script ^4.4.4`
-- **Build tools:** `vite ^2.7.2`
-- **Package management tool:** `pnpm 6.28.0`
-- **UI components:** `material design 5`
-- **Request:** `axios ^3.1.9`
-- **State management:** `recoil ^0.6.1`
-- **Style editor:** `emotion ^11.7.1`
+- **编写语言:** `type script ^4.4.4`
+- **构建工具:** `vite ^2.7.2`
+- **包管理工具:** `pnpm 6.28.0`
+- **UI 组件:** `material design 5`
+- **网络请求:** `axios ^3.1.9`
+- **状态管理:** `recoil ^0.6.1`
+- **样式编辑:** `emotion ^11.7.1`
 - **Hooks:** `ahooks ^3.1.9`
-- **Globalization:** `i18next ^21.6.11`
-- **Format:** `prettier ^2.5.1`
-- **Grammer check:** `eslint ^8.7.0`
-- **Dev server:** `json-server ^0.17.0`
+- **国际化:** `i18next ^21.6.11`
+- **格式化:** `prettier ^2.5.1`
+- **语法检查:** `eslint ^8.7.0`
+- **模拟数据:** `json-server ^0.17.0`
 
-## Future plan
+## 未来计划
 
-- Implement the _сommitlint_ standard.
-- Upgrade `react-router-dom v6`
-- Add _Unit Test_ test
-- Upgrade _React18_ version
+- 实现 _сommitlint_ 标准。
+- 升级 `react-router-dom v6`
+- 添加 _Unit Test_ 测试
+- 升级 _React18_ 版本
 
-## 🟢 Browser support
+## 🟢 浏览器支持
 
-Supports all modern browsers
+支持所有现代浏览器
 
-Recommended local development browser: `Chrome 80+`
+推荐本地开发浏览器: `Chrome 80 +`
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_48x48.png" alt="iOS Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>iOS Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/samsung-internet/samsung-internet_48x48.png" alt="Samsung" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Samsung | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Opera |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | IE11, Edge                                                                                                                                                                                                      | last 2 versions                                                                                                                                                                                                   | last 2 versions                                                                                                                                                                                               | last 2 versions                                                                                                                                                                                               | last 2 versions                                                                                                                                                                                                               | last 2 versions                                                                                                                                                                                                                     | last 2 versions                                                                                                                                                                                           |
 
-## License
+## 许可
 
-**React Template** is [MIT License](./LICENSE).
+**React Template** 是 [MIT 许可](./LICENSE)。
