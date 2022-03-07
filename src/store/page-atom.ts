@@ -1,15 +1,17 @@
+import { allowedLocale } from '#/locale';
+
 import { atom } from 'recoil';
 import { getLatestState, localStorage } from '@/utils';
 
 export interface pageStateProperties {
-	locale: string;
-	viewMode: string;
+	locale: allowedLocale;
+	viewMode: 'light' | 'dark';
 }
 
 export const defaultPageState: pageStateProperties = {
-	// 界面语言, 默认为哈萨克语
-	locale: 'kzKZ',
-	// 获取用户设备的显示模式, 默认为暗黑模式
+	// interface language, default is English
+	locale: 'enUS',
+	// get the display mode of the user's device
 	viewMode:
 		window.matchMedia &&
 		window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -22,7 +24,7 @@ const [isValid, state] = getLatestState(
 	defaultPageState,
 );
 
-// LocalStorage内数据"过期"
+// The data in LocalStorage is not as expected
 if (!isValid) {
 	localStorage.set('page', state);
 }
@@ -30,5 +32,5 @@ if (!isValid) {
 export const pageAtom = atom({
 	key: 'pageAtom',
 	// default value, aka initial value
-	default: localStorage.get('page', state),
+	default: localStorage.get('page', state) as pageStateProperties,
 });
