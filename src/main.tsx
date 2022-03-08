@@ -11,6 +11,7 @@ import { enUS, kkKZ, zhCN } from '@/i18n';
 import { getLatestState, localStorage } from '@/utils';
 import { defaultPageState } from '@/store';
 
+import { SafeArea } from './components/common';
 import App from './App';
 
 // 初始化语言, 从 LocalStorage 获取
@@ -42,7 +43,9 @@ i18next.use(initReactI18next).init({
 ReactDOM.render(
 	<StrictMode>
 		<RecoilRoot>
-			<App />
+			<SafeArea>
+				<App />
+			</SafeArea>
 		</RecoilRoot>
 	</StrictMode>,
 	document.getElementById('root'),
