@@ -8,3 +8,5 @@ export { default as getLocale } from './getLocale';
 export { default as sleep } from './sleep';
 
 export { default as generateI18nPluralIntervalRule } from './generateI18nPluralIntervalRule';
+
+export { default as getHtmlLang } from './getHtmlLang';
