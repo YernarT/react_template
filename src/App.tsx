@@ -15,11 +15,11 @@ import { localStorage, getLocale } from '@/utils';
 import getTheme from '@/assets/theme';
 
 function App() {
-	// 全局状态
+	// global state
 	const user = useRecoilValue(userAtom);
 	const page = useRecoilValue(pageAtom);
 
-	// 刷新页面 保存全局状态到本地, 用于下次打开页面时恢复
+	// Refresh the page and save the global state to the local for restoring the next time the page is opened
 	useEventListener('beforeunload', () => {
 		localStorage.set('user', user);
 		localStorage.set('page', page);

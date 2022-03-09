@@ -15,7 +15,7 @@ import { defaultPageState } from '@/store';
 import { SafeArea } from './components/common';
 import App from './App';
 
-// 初始化语言, 从 LocalStorage 获取
+// Initialize language, get it from LocalStorage
 const [_, page] = getLatestState(
 	localStorage.get('page', {}) as pageStateProperties,
 	defaultPageState,
