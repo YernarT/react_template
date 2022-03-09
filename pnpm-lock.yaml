@@ -21,6 +21,7 @@ specifiers:
   eslint-plugin-react: ^7.28.0
   eslint-plugin-react-hooks: ^4.3.0
   i18next: ^21.6.11
+  i18next-intervalplural-postprocessor: ^3.0.0
   json-server: ^0.17.0
   prettier: ^2.5.1
   react: ^17.0.2
@@ -41,6 +42,7 @@ dependencies:
   axios: 0.25.0
   date-fns: 2.28.0
   i18next: 21.6.11
+  i18next-intervalplural-postprocessor: 3.0.0
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-i18next: 11.15.4_3fb644aa30122a07f960d67fa51d6dc1
@@ -2425,6 +2427,10 @@ packages:
       statuses: 1.5.0
       toidentifier: 1.0.1
     dev: true
+
+  /i18next-intervalplural-postprocessor/3.0.0:
+    resolution: {integrity: sha512-ZJWg2Gcb0kQqVI7kygLj9wVwQHK3mzRAg94uLsdoHqss0M9n0HSPr1pThd2AttkBsJFWR26G18hnKCqcTB8shQ==}
+    dev: false
 
   /i18next/21.6.11:
     resolution: {integrity: sha512-tJ2+o0lVO+fhi8bPkCpBAeY1SgkqmQm5NzgPWCQssBrywJw98/o+Kombhty5nxQOpHtvMmsxcOopczUiH6bJxQ==}

@@ -5,7 +5,10 @@
 	"description": "This template is the React.js architecture scheme used in enterprise projects.",
 	"keywords": [
 		"react",
-		"template"
+		"template",
+		"typescript",
+		"frontend",
+		"vite"
 	],
 	"author": {
 		"name": "Yernar.T",
@@ -36,6 +39,7 @@
 		"axios": "^0.25.0",
 		"date-fns": "^2.28.0",
 		"i18next": "^21.6.11",
+		"i18next-intervalplural-postprocessor": "^3.0.0",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-i18next": "^11.15.4",
