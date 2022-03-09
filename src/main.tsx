@@ -6,6 +6,7 @@ import { RecoilRoot } from 'recoil';
 
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import intervalPlural from 'i18next-intervalplural-postprocessor';
 import { enUS, kkKZ, zhCN } from '@/i18n';
 
 import { getLatestState, localStorage } from '@/utils';
@@ -20,25 +21,26 @@ const [_, page] = getLatestState(
 	defaultPageState,
 );
 
-i18next.use(initReactI18next).init({
-	resources: {
-		enUS: {
-			translation: enUS,
+i18next
+	.use(initReactI18next)
+	.use(intervalPlural)
+	.init({
+		resources: {
+			enUS: {
+				translation: enUS,
+			},
+			kkKZ: {
+				translation: kkKZ,
+			},
+			zhCN: {
+				translation: zhCN,
+			},
 		},
-		kkKZ: {
-			translation: kkKZ,
-		},
-		zhCN: {
-			translation: zhCN,
-		},
-	},
-	lng: page.locale,
-	// 兜底语言
-	fallbackLng: 'kkKZ',
-	interpolation: {
-		escapeValue: false,
-	},
-});
+		lng: page.locale,
+		// 兜底语言
+		fallbackLng: 'enUS',
+		compatibilityJSON: 'v3',
+	});
 
 ReactDOM.render(
 	<StrictMode>
