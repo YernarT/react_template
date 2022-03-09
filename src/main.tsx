@@ -9,7 +9,7 @@ import { initReactI18next } from 'react-i18next';
 import intervalPlural from 'i18next-intervalplural-postprocessor';
 import { enUS, kkKZ, zhCN } from '@/i18n';
 
-import { getLatestState, localStorage } from '@/utils';
+import { getLatestState, localStorage, getHtmlLang } from '@/utils';
 import { defaultPageState } from '@/store';
 
 import { SafeArea } from './components/common';
@@ -37,7 +37,6 @@ i18next
 			},
 		},
 		lng: page.locale,
-		// 兜底语言
 		fallbackLng: 'enUS',
 		compatibilityJSON: 'v3',
 	});
@@ -51,4 +50,7 @@ ReactDOM.render(
 		</RecoilRoot>
 	</StrictMode>,
 	document.getElementById('root'),
+	() => {
+		document.documentElement.lang = getHtmlLang(page.locale);
+	},
 );
