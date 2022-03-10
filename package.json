@@ -62,5 +62,17 @@
 		"prettier": "^2.5.1",
 		"typescript": "^4.4.4",
 		"vite": "^2.7.2"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
 	}
 }
