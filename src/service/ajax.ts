@@ -1,3 +1,5 @@
+import type { userStateProperties } from '@/store';
+
 import axios from 'axios';
 import { localStorage } from '@/utils';
 
@@ -6,8 +8,10 @@ export const apiServerInstance = axios.create({
 	validateStatus: status => status >= 200 && status < 300,
 });
 
+// Request interceptor
 apiServerInstance.interceptors.request.use(config => {
-	const { jwt } = localStorage.get('user');
+	// Every time the jwt is updated in the page, the localstorage needs to be updated together
+	const { jwt } = localStorage.get('user') as userStateProperties;
 
 	if (jwt && config.headers) {
 		config.headers['Authorization'] = `Bearer ${jwt}`;
@@ -16,36 +20,31 @@ apiServerInstance.interceptors.request.use(config => {
 	return config;
 });
 
+// Response interceptor
 apiServerInstance.interceptors.response.use(
-	res => res,
-	err => {
-		if (err.response && err.response.status) {
-			let { status } = err.response;
+	response => response.data,
+	error => {
+		if (error.response && error.response.status) {
+			let { status } = error.response;
 
 			if (status >= 500) {
 				return Promise.reject({
-					message: 'Сервер құлап қалды...',
+					message: 'The server crashed...',
 				});
-			} else if (status >= 400 && status < 500) {
-				return Promise.reject(err.response.data);
-			} else {
-				return Promise.reject({
-					message: 'Белгісіз жағдай, кейінірек қайталаңыз',
-				});
+			}
+
+			if (status >= 400) {
+				return Promise.reject(error.response.data);
 			}
 		}
 
-		if (err.message === 'Network Error') {
+		if (error.message === 'Network Error') {
 			return Promise.reject({
-				message: 'Сервер істен шықты, кейінірек қайталаңыз',
+				message: 'Server failed, try again later',
 			});
 		}
 
-		console.log('\n\n\n开发中的未知错误!');
-		console.log(err);
-		console.log('\n\n\n');
-		return Promise.reject({
-			message: 'Сервер істен шықты, кейінірек қайталаңыз',
-		});
+		console.error('Error in request: ', error);
+		return Promise.reject(error);
 	},
 );
