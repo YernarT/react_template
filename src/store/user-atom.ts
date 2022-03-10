@@ -3,7 +3,7 @@ import { getLatestState, localStorage } from '@/utils';
 
 export interface userStateProperties {
 	username: string;
-	role: string;
+	role: 'guest' | 'user' | 'admin';
 	jwt: string;
 }
 
@@ -18,7 +18,7 @@ const [isValid, state] = getLatestState(
 	defaultUserState,
 );
 
-// LocalStorage内数据"过期"
+// The data in LocalStorage is not as expected
 if (!isValid) {
 	localStorage.set('user', state);
 }
@@ -26,5 +26,5 @@ if (!isValid) {
 export const userAtom = atom({
 	key: 'userAtom',
 	// default value, aka initial value
-	default: localStorage.get('user', state),
+	default: localStorage.get('user', state) as userStateProperties,
 });
