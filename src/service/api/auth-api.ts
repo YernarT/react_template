@@ -1,14 +1,14 @@
 import { apiServerInstance } from '../ajax';
 
 export interface AuthData {
-	phone: string;
+	username: string;
 	password: string;
 }
 
 // Login
-export const reqLog = (data: AuthData) =>
+export const reqLogin = (data: AuthData) =>
 	apiServerInstance.post('/user/login', data);
 
 // Register
-export const reqReg = (data: AuthData) =>
+export const reqRegister = (data: AuthData) =>
 	apiServerInstance.post('/user/register', data);
