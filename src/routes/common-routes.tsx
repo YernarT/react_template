@@ -1,20 +1,29 @@
 import type { RouteProps } from '#/routes';
 
 import { lazy } from 'react';
-import { Role } from '@/utils';
+import { sleep } from '@/utils';
+
+import { CommonLoading } from '@/loading';
 
 const commonRoutes: RouteProps[] = [
 	{
-		path: '/404',
-		component: lazy(
-			() =>
-				import(
-					/* webpackChunkName: "PageNotFoundPage" */ '@/pages/common/PageNotFoundPage'
-				),
-		),
-		fallback: <div>404 Loading...</div>,
+		path: ['/', '/introduce'],
+		component: lazy(async () => {
+			await sleep(360);
+			return import('@/pages/common/IntroducePage');
+		}),
+		fallback: <CommonLoading />,
 		auth: false,
-		role: Role.all(),
+		role: ['guest', 'user', 'admin'],
+		title: 'Introduce | React Template',
+	},
+	{
+		path: '/404',
+		component: lazy(() => import('@/pages/common/PageNotFoundPage')),
+		fallback: <CommonLoading />,
+		auth: false,
+		role: ['guest', 'user', 'admin'],
+		title: '404 | React Template',
 	},
 ];
 

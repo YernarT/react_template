@@ -1,17 +1,21 @@
 import type { RouteProps } from '#/routes';
 
 import { lazy } from 'react';
-import { Role } from '@/utils';
+import { sleep } from '@/utils';
+
+import { CommonLoading } from '@/loading';
 
 const userRoutes: RouteProps[] = [
 	{
-		path: '/',
-		component: lazy(
-			() => import(/* webpackChunkName: "HomePage" */ '@/pages/user/HomePage'),
-		),
-		fallback: <div>Home Loading...</div>,
+		path: ['/user', '/user/home'],
+		component: lazy(async () => {
+			await sleep(360);
+			return import('@/pages/user/HomePage');
+		}),
+		fallback: <CommonLoading />,
 		auth: true,
-		role: [Role.user, Role.admin],
+		role: ['user'],
+		title: 'Home | React Template',
 	},
 ];
 
