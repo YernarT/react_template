@@ -1,18 +1,33 @@
+// React & 周边库
 import { BrowserRouter } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { userAtom, pageAtom } from '@/store';
 
-import { CssBaseline } from '@mui/material';
-import { ThemeProvider } from '@mui/material/styles';
-import { LocalizationProvider } from '@mui/lab';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-
-import { RouteGuard } from '@/components/common';
-import routes from '@/routes';
-
+// 业务库
 import { useEventListener, useCreation } from 'ahooks';
-import { localStorage, getLocale } from '@/utils';
-import getTheme from '@/assets/theme';
+
+// 工具函数
+import { localStorage, getAntdLocale } from '@/utils';
+import { theme } from '@/assets/theme';
+
+// 组件
+import {
+	ConfigProvider as AntdConfigProvider,
+	message,
+	notification,
+} from 'antd';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import { CssBaseLine } from '@/components/common';
+import { CommonLayout } from '@/layout';
+
+// 配置 message
+message.config({
+	maxCount: 4,
+});
+// 配置 notification
+notification.config({
+	maxCount: 3,
+});
 
 function App() {
 	// global state
@@ -25,23 +40,22 @@ function App() {
 		localStorage.set('page', page);
 	});
 
-	const locale = useCreation(() => getLocale(page.locale), [page.locale]);
-	const theme = useCreation(
-		() => getTheme(locale.uiLocale, page.viewMode),
-		[page],
+	// 广告
+	// useAd();
+
+	const antdLocale = useCreation(
+		() => getAntdLocale(page.locale),
+		[page.locale],
 	);
 
 	return (
 		<BrowserRouter>
-			<ThemeProvider theme={theme}>
-				<LocalizationProvider
-					dateAdapter={AdapterDateFns}
-					locale={locale.dateLocale}>
-					<CssBaseline>
-						<RouteGuard routes={routes} />
-					</CssBaseline>
-				</LocalizationProvider>
-			</ThemeProvider>
+			<StyledThemeProvider theme={theme}>
+				<AntdConfigProvider locale={antdLocale}>
+					<CssBaseLine />
+					<CommonLayout />
+				</AntdConfigProvider>
+			</StyledThemeProvider>
 		</BrowserRouter>
 	);
 }
