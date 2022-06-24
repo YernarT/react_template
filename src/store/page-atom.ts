@@ -37,5 +37,5 @@ if (!isValid) {
 export const pageAtom = atom({
 	key: 'pageAtom',
 	// default value, aka initial value
-	default: localStorage.get('page', state),
+	default: state,
 });
