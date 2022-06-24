@@ -1,19 +1,21 @@
+import type { allowedRole } from '@/utils';
+
 import { atom } from 'recoil';
-import { getLatestState, localStorage } from '@/utils';
+import { getLatestState, localStorage, role } from '@/utils';
 
 export interface userStateProperties {
 	username: string;
-	role: 'guest' | 'user' | 'admin';
+	role: allowedRole;
 	jwt: string;
 }
 
 export const defaultUserState: userStateProperties = {
 	username: '',
-	role: 'guest',
+	role: role.GUEST,
 	jwt: '',
 };
 
-const [isValid, state] = getLatestState(
+const [isValid, state] = getLatestState<userStateProperties>(
 	localStorage.get('user', {}),
 	defaultUserState,
 );
@@ -26,5 +28,5 @@ if (!isValid) {
 export const userAtom = atom({
 	key: 'userAtom',
 	// default value, aka initial value
-	default: localStorage.get('user', state) as userStateProperties,
+	default: state,
 });

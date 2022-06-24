@@ -1,11 +1,16 @@
-import { allowedLocale } from '#/locale';
+// 类型
+import type { allowedLocale } from '@/i18n';
+import type { themeMode } from '@/assets/theme/theme';
 
+// 业务库
 import { atom } from 'recoil';
+
+// 工具函数
 import { getLatestState, localStorage } from '@/utils';
 
 export interface pageStateProperties {
 	locale: allowedLocale;
-	viewMode: 'light' | 'dark';
+	viewMode: themeMode;
 }
 
 export const defaultPageState: pageStateProperties = {
@@ -15,11 +20,11 @@ export const defaultPageState: pageStateProperties = {
 	viewMode:
 		window.matchMedia &&
 		window.matchMedia('(prefers-color-scheme: dark)').matches
-			? 'dark'
-			: 'light',
+			? 'DARK'
+			: 'LIGHT',
 };
 
-const [isValid, state] = getLatestState(
+const [isValid, state] = getLatestState<pageStateProperties>(
 	localStorage.get('page', {}),
 	defaultPageState,
 );
@@ -32,5 +37,5 @@ if (!isValid) {
 export const pageAtom = atom({
 	key: 'pageAtom',
 	// default value, aka initial value
-	default: localStorage.get('page', state) as pageStateProperties,
+	default: localStorage.get('page', state),
 });
