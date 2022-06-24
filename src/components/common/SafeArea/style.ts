@@ -1,4 +1,4 @@
-import { styled } from '@mui/material';
+import styled from 'styled-components';
 
 export const SafeAreaStyleBox = styled('div')<{ vh: number | null }>(
 	({ vh }) => ({

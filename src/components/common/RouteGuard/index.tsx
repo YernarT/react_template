@@ -1,12 +1,16 @@
-import type { RouteProps } from '#/routes';
+// 类型
+import type { RouteProps } from '@/routes';
 
+// React & React 周边
 import { memo, Suspense } from 'react';
 import { Route, Redirect, useLocation } from 'react-router-dom';
-
-import { useTitle } from 'ahooks';
 import { useRecoilValue } from 'recoil';
 import { userAtom } from '@/store';
 
+// 业务库
+import { useTitle } from 'ahooks';
+
+// 定义组件Props类型
 interface RouteGuardProps {
 	routes: RouteProps[];
 }
