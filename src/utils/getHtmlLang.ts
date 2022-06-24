@@ -1,4 +1,4 @@
-import type { allowedLocale } from '#/locale';
+import type { allowedLocale } from '@/i18n';
 
 export default function getHtmlLang(locale: allowedLocale) {
 	switch (locale) {

@@ -2,8 +2,8 @@
  * Check the contents of localStorage are out of date or incorrect
  */
 
-export default function getLatestState<T extends object>(
-	dataToBeDetected: T,
+ export default function getLatestState<T extends object>(
+	dataToBeDetected: object,
 	defaultCorrectData: T,
 ): [isValid: boolean, state: T] {
 	let fromStorageKeys = Object.keys(dataToBeDetected);
@@ -19,5 +19,5 @@ export default function getLatestState<T extends object>(
 		}
 	});
 
-	return [true, dataToBeDetected];
+	return [true, dataToBeDetected as T];
 }
