@@ -1,14 +1,15 @@
 {
 	"name": "react_template",
-	"version": "5.0.0",
+	"version": "6.0.0",
 	"private": false,
 	"description": "This template is the React.js architecture scheme used in enterprise projects.",
 	"keywords": [
-		"react",
 		"template",
+		"architecture",
+		"react",
 		"typescript",
-		"frontend",
-		"vite"
+		"vite",
+		"frontend"
 	],
 	"author": {
 		"name": "Yernar.T",
@@ -27,41 +28,45 @@
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
-		"json-server": "json-server --watch --port 9090 --delay 1000 __json_server_mock__/db.json"
+		"json-server": "json-server --watch --port 9090 --delay 500 __json_server_mock__/db.json"
 	},
 	"dependencies": {
-		"@emotion/react": "^11.8.1",
-		"@emotion/styled": "^11.8.1",
-		"@mui/icons-material": "^5.4.1",
-		"@mui/lab": "^5.0.0-alpha.72",
-		"@mui/material": "^5.4.1",
-		"ahooks": "^3.1.9",
-		"axios": "^0.25.0",
-		"date-fns": "^2.28.0",
-		"i18next": "^21.6.11",
+		"@babel/core": "^7.18.5",
+		"ahooks": "^3.5.0",
+		"antd": "^4.21.3",
+		"axios": "^0.27.2",
+		"i18next": "^21.8.9",
 		"i18next-intervalplural-postprocessor": "^3.0.0",
+		"json-server": "^0.17.0",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
-		"react-i18next": "^11.15.4",
+		"react-i18next": "^11.17.1",
+		"react-icons": "^4.4.0",
+		"react-is": "^18.2.0",
 		"react-router-dom": "5.3.0",
-		"recoil": "^0.6.1"
+		"recoil": "^0.7.3",
+		"styled-components": "^5.3.5"
 	},
 	"devDependencies": {
+		"@types/babel__core": "^7.1.19",
+		"@types/lodash": "^4.14.182",
 		"@types/node": "^17.0.12",
 		"@types/react": "^17.0.33",
 		"@types/react-dom": "^17.0.10",
 		"@types/react-router-dom": "^5.3.3",
+		"@types/styled-components": "^5.1.25",
 		"@typescript-eslint/eslint-plugin": "^5.10.1",
 		"@typescript-eslint/parser": "^5.10.1",
-		"@vitejs/plugin-react": "^1.0.7",
+		"@vitejs/plugin-react": "^1.2.0",
 		"eslint": "^8.7.0",
 		"eslint-define-config": "^1.2.3",
 		"eslint-plugin-react": "^7.28.0",
 		"eslint-plugin-react-hooks": "^4.3.0",
-		"json-server": "^0.17.0",
+		"less": "^4.1.2",
 		"prettier": "^2.5.1",
-		"typescript": "^4.4.4",
-		"vite": "^2.7.2"
+		"typescript": "^4.6.2",
+		"vite": "^2.8.6",
+		"vite-plugin-imp": "^2.1.8"
 	},
 	"browserslist": {
 		"production": [
