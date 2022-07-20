@@ -1,7 +1,7 @@
-import type { RouteProps } from '#/routes';
+import type { RouteProps } from './index';
 
 import { lazy } from 'react';
-import { sleep } from '@/utils';
+import { sleep, role } from '@/utils';
 
 import { CommonLoading } from '@/loading';
 
@@ -14,7 +14,7 @@ const userRoutes: RouteProps[] = [
 		}),
 		fallback: <CommonLoading />,
 		auth: true,
-		role: ['user'],
+		role: [role.USER],
 		title: 'Home | React Template',
 	},
 ];
