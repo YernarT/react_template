@@ -6,7 +6,7 @@ import type { themeMode } from '@/assets/theme/theme';
 import { atom } from 'recoil';
 
 // 工具函数
-import { getLatestState, localStorage } from '@/utils';
+import { localStorage } from '@/utils';
 
 export interface pageStateProperties {
 	locale: allowedLocale;
@@ -24,15 +24,7 @@ export const defaultPageState: pageStateProperties = {
 			: 'LIGHT',
 };
 
-const [isValid, state] = getLatestState<pageStateProperties>(
-	localStorage.get('page', {}),
-	defaultPageState,
-);
-
-// The data in LocalStorage is not as expected
-if (!isValid) {
-	localStorage.set('page', state);
-}
+const state = localStorage.get('page', defaultPageState);
 
 export const pageAtom = atom({
 	key: 'pageAtom',

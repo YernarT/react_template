@@ -1,7 +1,7 @@
 import type { allowedRole } from '@/utils';
 
 import { atom } from 'recoil';
-import { getLatestState, localStorage, role } from '@/utils';
+import { localStorage, role } from '@/utils';
 
 export interface userStateProperties {
 	username: string;
@@ -15,15 +15,7 @@ export const defaultUserState: userStateProperties = {
 	jwt: '',
 };
 
-const [isValid, state] = getLatestState<userStateProperties>(
-	localStorage.get('user', {}),
-	defaultUserState,
-);
-
-// The data in LocalStorage is not as expected
-if (!isValid) {
-	localStorage.set('user', state);
-}
+const state = localStorage.get('user', defaultUserState);
 
 export const userAtom = atom({
 	key: 'userAtom',

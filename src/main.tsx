@@ -1,6 +1,3 @@
-// 类型
-import type { pageStateProperties } from '@/store';
-
 // React & 周边库
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
@@ -13,7 +10,7 @@ import intervalPlural from 'i18next-intervalplural-postprocessor';
 import { enUS, kkKZ, zhCN } from '@/i18n';
 
 // 工具函数
-import { getLatestState, localStorage, getHtmlLang } from '@/utils';
+import { localStorage, getHtmlLang } from '@/utils';
 import { defaultPageState } from '@/store';
 
 // 组件
@@ -21,10 +18,7 @@ import { SafeArea } from './components/common';
 import App from './App';
 
 // Initialize language, get it from LocalStorage
-const [_, page] = getLatestState(
-	localStorage.get('page', {}) as pageStateProperties,
-	defaultPageState,
-);
+const page = localStorage.get('page', defaultPageState);
 
 // 初始化 i18n模块
 i18next
