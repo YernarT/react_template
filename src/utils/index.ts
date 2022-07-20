@@ -1,6 +1,5 @@
 export type { localStorageProperties } from './localStorage';
 export { localStorage } from './localStorage';
-export { default as getLatestState } from './getLatestState';
 
 export { default as getHtmlLang } from './getHtmlLang';
 export { default as getAntdLocale } from './getAntdLocale';
