@@ -12,7 +12,7 @@
 
 </div>
 
-> [English / 英文](./README.md) <br />前端 Web 项目中使用的 `React` 架构方案。
+> [English / 英文](./README.md) <br />前端 Web 项目中使用的 `React (CSR, SPA)` 架构方案。
 
 ---
 

@@ -12,7 +12,7 @@
 
 </div>
 
-> [Chinese / 中文](./README.zhCN.md) <br /> The `React` architectural scheme used in front-end web projects.
+> [Chinese / 中文](./README.zhCN.md) <br /> The `React (CSR, SPA)` architectural scheme used in front-end web projects.
 
 ---
 
