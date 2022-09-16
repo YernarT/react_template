@@ -5,8 +5,8 @@
     <br /><br />
 
 [![license](https://img.shields.io/badge/React-17.0.2-blue?logo=React)](https://reactjs.org/)
-[![license](https://img.shields.io/badge/Vite-2.7.2-blueviolet?logo=Vite)](https://vitejs.dev/)
-[![license](https://img.shields.io/badge/TypeScript-4.4.4-blue?logo=TypeScript)](https://www.typescriptlang.org/)
+[![license](https://img.shields.io/badge/Vite-3.1.1-blueviolet?logo=Vite)](https://vitejs.dev/)
+[![license](https://img.shields.io/badge/TypeScript-4.8.4-blue?logo=TypeScript)](https://www.typescriptlang.org/)
 
 # React Template &middot; V5.0.0
 
