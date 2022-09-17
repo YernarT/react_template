@@ -1,6 +1,6 @@
 // 类型
 import type { allowedLocale } from '@/i18n';
-import type { themeMode } from '@/assets/theme/theme';
+import type { themeMode } from '@/assets/theme';
 
 // 业务库
 import { atom } from 'recoil';
