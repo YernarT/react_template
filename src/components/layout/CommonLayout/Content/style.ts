@@ -15,5 +15,6 @@ export const ContentStyledBox = styled.main`
 	& > * {
 		${container};
 		height: 100%;
+		overflow: inherit;
 	}
 `;
