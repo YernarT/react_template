@@ -7,7 +7,7 @@ import { getHtmlLang } from '@/utils';
 
 import i18next from 'i18next';
 import { useTranslation, Trans } from 'react-i18next';
-import { useSafeState } from 'ahooks';
+import { useCounter } from 'ahooks';
 
 import { Select, Button, Typography } from 'antd';
 
@@ -67,13 +67,13 @@ export default function IntroducePage() {
 function I18nExample() {
 	const [page, setPage] = useRecoilState(pageAtom);
 	const { t } = useTranslation();
-	const [langChangedCount, setLangChangedCount] = useSafeState(0);
+	const [langChangedCount, { inc: incLangChangeCount }] = useCounter(0);
 
-	const handleChangeLocale = ({ target: { value } }) => {
-		document.documentElement.lang = getHtmlLang(value as allowedLocale);
+	const handleChangeLocale = (value: allowedLocale) => {
+		document.documentElement.lang = getHtmlLang(value);
 		i18next.changeLanguage(value);
-		setLangChangedCount(prevState => prevState + 1);
-		setPage(currVal => ({ ...currVal, locale: value as allowedLocale }));
+		incLangChangeCount();
+		setPage(currVal => ({ ...currVal, locale: value }));
 	};
 
 	return (
