@@ -8,7 +8,7 @@ import { useEventListener, useCreation } from 'ahooks';
 
 // 工具函数
 import { localStorage, getAntdLocale } from '@/utils';
-import { theme } from '@/assets/theme';
+import { getTheme } from '@/assets/theme';
 
 // 组件
 import {
@@ -47,6 +47,8 @@ function App() {
 		() => getAntdLocale(page.locale),
 		[page.locale],
 	);
+
+	const theme = useCreation(() => getTheme(page.viewMode), [page.viewMode]);
 
 	return (
 		<BrowserRouter>
