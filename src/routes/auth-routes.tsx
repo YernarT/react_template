@@ -13,7 +13,7 @@ const authRoutes: RouteProps[] = [
 			return import('@/pages/auth/SignInPage');
 		}),
 		fallback: <CommonSkeleton />,
-		auth: true,
+		auth: false,
 		role: role.all(),
 		title: 'Sign in | React Template',
 	},
@@ -25,7 +25,7 @@ const authRoutes: RouteProps[] = [
 			return import('@/pages/auth/SignUpPage');
 		}),
 		fallback: <CommonSkeleton />,
-		auth: true,
+		auth: false,
 		role: role.all(),
 		title: 'Sign up | React Template',
 	},
