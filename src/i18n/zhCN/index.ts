@@ -7,5 +7,9 @@ export default {
 		'0-inf': '你切换了 {{count}} 次语言',
 	}),
 
+	// Header
 	signIn: '登入',
+
+	// 404
+	backToHome: '返回首页',
 };

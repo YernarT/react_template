@@ -11,4 +11,7 @@ export default {
 
 	// Header
 	signIn: 'Sign in',
+
+	// 404
+	backToHome: 'Back to home',
 };

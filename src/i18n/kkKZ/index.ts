@@ -7,5 +7,9 @@ export default {
 		'0-inf': 'Тілді {{count}} рет өзгерттің',
 	}),
 
-	signIn: 'Кіру'
+	// Header
+	signIn: 'Кіру',
+
+	// 404
+	backToHome: 'Батапқы бетке оралу',
 };
