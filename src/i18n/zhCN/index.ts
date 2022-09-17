@@ -6,4 +6,6 @@ export default {
 	change_interval: generateI18nPluralIntervalRule({
 		'0-inf': '你切换了 {{count}} 次语言',
 	}),
+
+	signIn: '登入',
 };

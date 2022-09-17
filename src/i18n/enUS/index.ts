@@ -8,4 +8,7 @@ export default {
 		'1': 'You have changed the language {{count}} time',
 		'2-inf': 'You have changed the language {{count}} times',
 	}),
+
+	// Header
+	signIn: 'Sign in',
 };

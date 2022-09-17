@@ -6,4 +6,6 @@ export default {
 	change_interval: generateI18nPluralIntervalRule({
 		'0-inf': 'Тілді {{count}} рет өзгерттің',
 	}),
+
+	signIn: 'Кіру'
 };
