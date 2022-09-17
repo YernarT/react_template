@@ -7,15 +7,15 @@ import { CommonSkeleton } from '@/components/skeleton';
 
 const userRoutes: RouteProps[] = [
 	{
-		path: ['/user', '/user/home'],
+		path: ['/user', '/user/profile'],
 		component: lazy(async () => {
 			await sleep(360);
-			return import('@/pages/user/HomePage');
+			return import('@/pages/user/Profile');
 		}),
 		fallback: <CommonSkeleton />,
 		auth: true,
 		role: [role.USER],
-		title: 'Home | React Template',
+		title: 'Profile | React Template',
 	},
 ];
 

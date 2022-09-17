@@ -14,8 +14,9 @@ export interface RouteProps {
 }
 
 import userRoutes from './user-routes';
+import authRoutes from './auth-routes';
 import commonRoutes from './common-routes';
 
-const routes: RouteProps[] = [...userRoutes, ...commonRoutes];
+const routes: RouteProps[] = [...userRoutes, ...authRoutes, ...commonRoutes];
 
 export default routes;
