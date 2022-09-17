@@ -1,7 +1,5 @@
 # React Template &middot; V5.0.0
 
-</div>
-
 > [Chinese version / 中文版](./README.zhCN.md)<br /> The `React (CSR, SPA)` architectural scheme used in front-end web projects.
 
 ---
