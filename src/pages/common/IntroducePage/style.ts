@@ -1,31 +1,48 @@
-import { styled, css } from '@mui/material';
+import styled from 'styled-components';
 
-export const IntroduceStyledBox = styled('div')(
-	() => css`
+export const IntroduceStyledBox = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	@media screen and (max-width: 585px) {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.logo {
+		width: 200px;
+		height: 200px;
+		object-fit: cover;
+	}
+
+	.bread {
 		display: flex;
-		flex-direction: column;
-		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 8px;
 
-		height: inherit;
-		padding: 20px 10px;
+		margin: 20px 0 10px 0;
+	}
 
-		.logo {
-			width: 200px;
-			height: 200px;
-			margin-bottom: 25px;
+	.title {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+`;
 
-			object-fit: cover;
-		}
+export const I18nExampleStyledBox = styled.div`
+	margin-top: 10px;
 
-		.bread {
-			display: flex;
-			justify-content: center;
-			flex-wrap: wrap;
-			gap: 6.5px;
-		}
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
-		.title {
-			text-align: center;
-		}
-	`,
-);
+	.title {
+		margin: 10px 0;
+	}
+`;
