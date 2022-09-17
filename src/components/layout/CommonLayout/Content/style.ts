@@ -4,7 +4,8 @@ import { container } from '@/assets/style';
 
 export const ContentStyledBox = styled.main`
 	height: calc(100% - 72px);
-	background: ${({ theme }) => theme.palette.backgroundColor};
+	background: ${({ theme }) =>
+		theme.palette.mode === 'DARK' ? '#000' : theme.palette.backgroundColor};
 
 	position: relative;
 	top: 72px;

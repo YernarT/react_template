@@ -30,6 +30,7 @@ export const IntroduceStyledBox = styled.div`
 
 	.title {
 		text-align: center;
+		color: ${({ theme }) => theme.typography.color};
 		margin-bottom: 20px;
 	}
 `;
@@ -44,5 +45,10 @@ export const I18nExampleStyledBox = styled.div`
 
 	.title {
 		margin: 10px 0;
+		color: ${({ theme }) => theme.typography.color};
+	}
+
+	.ant-typography {
+		color: ${({ theme }) => theme.typography.color};
 	}
 `;

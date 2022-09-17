@@ -5,5 +5,7 @@ export const CommonSkeletonStyled = styled.div`
     justify-content: center;
     align-items: center;  
 
-    
+    .ant-typography {
+		color: ${({ theme }) => theme.typography.color};
+	}
 `;
