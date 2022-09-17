@@ -18,7 +18,7 @@ import {
 } from 'antd';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import { CssBaseLine } from '@/components/common';
-import { CommonLayout } from '@/layout';
+import { CommonLayout } from '@/components/layout';
 
 // 配置 message
 message.config({
