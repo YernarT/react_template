@@ -3,7 +3,7 @@ import type { RouteProps } from './index';
 import { lazy } from 'react';
 import { sleep, role } from '@/utils';
 
-import { CommonLoading } from '@/loading';
+import { CommonSkeleton } from '@/components/skeleton';
 
 const commonRoutes: RouteProps[] = [
 	{
@@ -12,7 +12,7 @@ const commonRoutes: RouteProps[] = [
 			await sleep(360);
 			return import('@/pages/common/IntroducePage');
 		}),
-		fallback: <CommonLoading />,
+		fallback: <CommonSkeleton />,
 		auth: false,
 		role: role.all(),
 		title: 'Introduce | React Template',
@@ -20,7 +20,7 @@ const commonRoutes: RouteProps[] = [
 	{
 		path: '/404',
 		component: lazy(() => import('@/pages/common/PageNotFoundPage')),
-		fallback: <CommonLoading />,
+		fallback: <CommonSkeleton />,
 		auth: false,
 		role: role.all(),
 		title: '404 | React Template',
