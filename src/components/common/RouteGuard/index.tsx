@@ -15,6 +15,9 @@ interface RouteGuardProps {
 	routes: RouteProps[];
 }
 
+const AUTH_URL = '/auth/sign-in';
+const PAGE_NOT_FOUND_URL = '/404';
+
 export default memo(function RouteGuard({ routes }: RouteGuardProps) {
 	const { pathname } = useLocation();
 
@@ -34,12 +37,12 @@ export default memo(function RouteGuard({ routes }: RouteGuardProps) {
 	if (targetConfig) {
 		// Require authorization, but user not authorized
 		if (targetConfig.auth && Boolean(user.jwt) === false) {
-			return <Redirect to="/auth/login" />;
+			return <Redirect to={AUTH_URL} />;
 		}
 
 		// Disallowed user role
 		if (!targetConfig.role.includes(user.role)) {
-			return <Redirect to="/404" />;
+			return <Redirect to={PAGE_NOT_FOUND_URL} />;
 		}
 
 		// Everything is ok
@@ -55,5 +58,5 @@ export default memo(function RouteGuard({ routes }: RouteGuardProps) {
 	}
 
 	// Unregistered route
-	return <Redirect to="/404" />;
+	return <Redirect to={PAGE_NOT_FOUND_URL} />;
 });
