@@ -88,9 +88,7 @@ export const localStorage: localStorageProperties = {
 	_DATA_VERSION: '5.0.0',
 
 	get _VERSION_MARK_RegExp() {
-		return new RegExp(
-			'/^' + this._DATA_PREFIX + '=' + this._DATA_VERSION + ';/',
-		);
+		return new RegExp(`^${this._DATA_PREFIX}=${this._DATA_VERSION};`);
 	},
 
 	_checkDataVersion(data) {
